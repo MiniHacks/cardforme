@@ -222,87 +222,138 @@ def chase_ink_business_unlimited(card):
 def citi_custom_cash(card):
     tot = 0
     v1 = card.extract_max_values(1)
-    if v1[1] == "Groceries":
-        tot += (card.groceries * 5) / 100
+    if v1[1] == "Flights":
+        if card.flights > 500:
+            tot += (500 * 5) / 100 + ((card.flights - 500) * 1) / 100
+        else:
+            tot += (card.flights * 5) / 100
+    else:
+        tot += (card.flights * 1) / 100
 
+    if v1[1] == "Groceries":
+        if card.groceries > 500:
+            tot += (500 * 5) / 100 + ((card.groceries - 500) * 1) / 100
+        else:
+            tot += (card.groceries * 5) / 100
+    else:
+        tot += (card.groceries * 1) / 100
+
+    if v1[1] == "Gas":
+        if card.gas > 500:
+            tot += (500 * 5) / 100 + ((card.gas - 500) * 1) / 100
+        else:
+            tot += (card.gas * 5) / 100
+    else:
+        tot += (card.gas * 1) / 100
+
+    if v1[1] == "Dining":
+        if card.dining > 500:
+            tot += (500 * 5) / 100 + ((card.dining - 500) * 1) / 100
+        else:
+            tot += (card.dining * 5) / 100
+    else:
+        tot += (card.dining * 1) / 100
+    if v1[1] == "Entertainment":
+        if card.entertainment > 500:
+            tot += (500 * 5) / 100 + ((card.entertainment - 500) * 1) / 100
+        else:
+            tot += (card.entertainment * 5) / 100
+    if v1[1] == "Car Rental":
+        if card.car_rental > 500:
+            tot += (500 * 5) / 100 + ((card.car_rental - 500) * 1) / 100
+        else:
+            tot += (card.car_rental * 5) / 100
+    else:
+        tot += (card.car_rental * 1) / 100
+
+    if v1[1] == "Hotel":
+        if card.hotel > 500:
+            tot += (500 * 5) / 100 + ((card.hotel - 500) * 1) / 100
+        else:
+            tot += (card.hotel * 5) / 100
+    else:
+        tot += (card.hotel * 1) / 100
+    if v1[1] == "Retail":
+        if card.retail > 500:
+            tot += (500 * 5) / 100 + ((card.retail - 500) * 1) / 100
+        else:
+            tot += (card.retail * 5) / 100
+    else:
+        tot += (card.retail * 1) / 100
     return tot
-Company: Citi <br />
-Card: Citi Custom Cash® Card <br />
-Annual Fee: 0 <br />
-Name in code: citi_custom_cash <br >
-Benefits:
-- Earn 5% cash back on purchases in your top eligible spend category each billing cycle, up to the first $500 spent, 1% cash back thereafter.
-- Earn unlimited 1% cash back on all other purchases.
----
-Company: Citi <br />
-Card: Citi Double Cash Card <br />
-Annual Fee: 0 <br />
-Name in code: citi_double_cash <br >
-Benefits:
-- Up to 2% cash back (1% at time of purchase, then 1% at time of payment) on all purchases
----
-Company: Citi <br />
-Card: Citi Premier Card <br />
-Annual Fee: 0 <br />
-Name in code: citi_premier <br >
-Benefits:
-- 3X ThankYou Points per $1 on restaurant, supermarket, gas station, hotel and air travel purchases
-- 1X Points on all other purchases.
-- Plus, for a limited time, earn a total of 10 ThankYou® Points per $1 spent on hotel, car rentals, and attractions (excluding air travel) booked on the Citi TravelSM portal through June 30, 2024.
----
-Company: Citi <br />
-Card: Citi Rewards+ Card <br />
-Annual Fee: 0 <br />
-Name in code: citi_rewards <br >
-Benefits:
-- 2X ThankYou® Points at supermarkets and gas stations (for the first $6,000/year, then 1 point per $1), and 1 point on all other purchases
----
-Company: Citi <br />
-Card: Citi® / AAdvantage® Platinum Select® World Elite Mastercard® <br />
-Annual Fee: 99 <br />
-Name in code: citi_aadvantage_platinum_select <br >
-Benefits:
-- 2 AAdvantage® miles for every $1 spent at gas stations, restaurants and on eligible American Airlines purchases
----
-Company: Discover <br />
-Card: Discover it® Cash Back <br />
-Annual Fee: 0 <br />
-Name in code: discover_it_cash_back <br >
-Benefits:
-- Earn 5% cash back on everyday purchases at different places each quarter like Amazon.com, grocery stores, restaurants, and gas stations, up to the quarterly maximum when you activate.
-- Plus, earn unlimited 1% cash back on all other purchases – automatically.
----
-Company: Discover <br />
-Card: Discover it® Balance Transfer <br />
-Annual Fee: 0 <br />
-Name in code: discover_it_balance_transfer <br >
-Benefits:
-- Earn 5% cash back on everyday purchases at different places each quarter like Amazon.com, grocery stores, restaurants, and gas stations, up to the quarterly maximum when you activate.
-- Earn unlimited 1% cash back on all other purchases - automatically.
----
-Company: Discover <br />
-Card: Discover it® Miles <br />
-Annual Fee: 0 <br />
-Name in code: discover_it_miles <br >
-Benefits:
--  Automatically earn unlimited 1.5x Miles on every dollar of every purchase - with no annual fee.
----
-Company: Discover <br />
-Card: Discover it® Chrome <br />
-Annual Fee: 0 <br />
-Name in code: discover_it_chrome <br >
-Benefits:
-- Plus, earn unlimited 1% cash back on all other purchases - automatically.
-- Earn cash back on your next road trip with 2% cash back at Gas Stations and Restaurants on up to $1,000 in combined purchases each quarter.
----
-Company: Discover <br />
-Card: Discover it® Student Chrome<br />
-Annual Fee: 0 <br />
-Name in code: discover_it_student_chrome <br >
-Benefits:
-- Plus, earn unlimited 1% cash back on all other purchases - automatically.
-- Earn 2% cash back at Gas Stations and Restaurants on up to $1,000 in combined purchases each quarter.
----
+
+# Citi Double Cash Card
+def citi_double_cash(card):
+    tot = 0
+    tot += (card.total * 2) / 100
+    return tot
+
+# Citi Premier Card
+def citi_premier(card):
+    tot = 0
+    tot += (card.flights * 3) / 100
+    tot += (card.groceries * 3) / 100
+    tot += (card.gas * 3) / 100
+    tot += (card.dining * 3) / 100
+    tot += (card.hotel * 3) / 100
+    tot += (card.total - card.flights - card.groceries - card.gas - card.dining - card.hotel) / 100
+    tot -= 95
+    return tot
+
+# Citi Rewards+ Card
+def citi_rewards(card):
+    tot = 0
+    tot += (card.groceries * 2) / 100
+    tot += (card.gas * 2) / 100
+    tot += (card.total - card.groceries - card.gas) / 100
+    return tot
+
+# Citi AAdvantage Platinum Select World Elite Mastercard
+def citi_aadvantage_platinum_select(card):
+    tot = 0
+    tot += (card.flights * 2) / 100
+    tot += (card.gas * 2) / 100
+    tot += (card.dining * 2) / 100
+    tot += (card.total - card.flights - card.gas - card.dining) / 100
+    tot -= 99
+    return tot
+
+# Discover It Cash Back
+def discover_it_cash_back(card):
+    tot = 0
+    tot += (card.groceries * 5) / 100
+    tot += (card.total - card.groceries) / 100
+    return tot
+
+# Discover It Balance Transfer
+def discover_it_balance_transfer(card):
+    tot = 0
+    tot += (card.retail * 5) / 100
+    tot += (card.total - card.retail) / 100
+    return tot
+
+# Discover It Miles
+# def discover_it_miles(card):
+#     tot = 0
+#     tot += (card.gas * 1.5) / 100s
+#     return tot
+#
+# Company: Discover <br />
+# Card: Discover it® Miles <br />
+# Annual Fee: 0 <br />
+# Name in code: discover_it_miles <br >
+# Benefits:
+# -  Automatically earn unlimited 1.5x Miles on every dollar of every purchase - with no annual fee.
+# ---
+
+# Discover It Chrome
+def discover_it_chrome(card):
+    tot = 0
+    tot += (card.gas * 2) / 100
+    tot += (card.restaurants * 2) / 100
+    tot += (card.total - card.gas - card.restaurants) / 100
+    return tot
+
 Company: Synchrony <br />
 Card: Sam's Club® Mastercard®<br />
 Annual Fee: 0 <br />
