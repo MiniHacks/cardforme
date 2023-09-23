@@ -285,15 +285,6 @@ Benefits:
 -Serves as both a credit card and your Sam’s Club membership card(monthly payment can be calculated for, very spec)
 ---
 Company: Synchrony <br />
-Card: Sam's Club® Mastercard®<br />
-Annual Fee: 0 <br />
-Name in code: synchrony_sams_club_mastercard <br >
-Benefits:
--Its excellent 5 percent cash back on gas (on up to $6,000 in yearly purchases, then 1 percent) is one of the best gas rewards rates available
--Your first $30 of Sam’s Club purchases within 30 days are covered with a matching statement credit
--Serves as both a credit card and your Sam’s Club membership card(monthly payment can be calculated for, very spec)
----
-Company: Synchrony <br />
 Card:PayPal Cashback Mastercard<br />
 Annual Fee: 0 <br />
 Name in code: synchrony_paypal_cashback_mastercard <br >
@@ -309,15 +300,6 @@ Name in code: us_bank_visa_platinum <br >
 Benefits:
 -It comes with cellphone protection when you pay your monthly phone bill with your card (up to two $600 claims per 12-month period, $25 deductible).
 -Its intro APR offer is relatively long, giving cardholders one of the longest breaks from interest on balance transfers and new purchases.
----
-Company: US Bank <br />
-Card: U.S. Bank Cash+® Visa Signature® Card<br />
-Annual Fee: 0 <br />
-Name in code: us_bank_cash_plus_visa_signature <br >
-Benefits:
-- You can tailor your cash back rewards to the products and services on which you spend the most each quarter.
-- You won’t have to pay an annual fee for this card.
-- This card offers an introductory APR on purchases and balance transfers (for transfers made within 60 days of account opening).
 ---
 Company: US Bank <br />
 Card: U.S. Bank Cash+® Visa Signature® Card<br />
@@ -368,13 +350,6 @@ Name in code: wells_fargo_autograph <br >
 Benefits:
 - Earn 1X points on other purchases
 - Earn unlimited 3X points on restaurants, travel, gas stations, transit, popular streaming services and phone plans.
----
-Company: Wells Fargo <br />
-Card: Wells Fargo Reflect® Card<br />
-Annual Fee: 0 <br />
-Name in code: wells_fargo_reflect <br >
-Benefits:
-- Impressively long APR period for a balance transfer credit card
 ---
 Company: Wells Fargo <br />
 Card: Hotels.com® Rewards Visa® Credit Card<br />
