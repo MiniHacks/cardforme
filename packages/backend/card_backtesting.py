@@ -354,64 +354,91 @@ def discover_it_chrome(card):
     tot += (card.total - card.gas - card.restaurants) / 100
     return tot
 
-Company: Synchrony <br />
-Card: Sam's Club® Mastercard®<br />
-Annual Fee: 0 <br />
-Name in code: synchrony_sams_club_mastercard <br >
-Benefits:
--Its excellent 5 percent cash back on gas (on up to $6,000 in yearly purchases, then 1 percent) is one of the best gas rewards rates available
--Your first $30 of Sam’s Club purchases within 30 days are covered with a matching statement credit
--Serves as both a credit card and your Sam’s Club membership card(monthly payment can be calculated for, very spec)
----
-Company: Synchrony <br />
-Card: Sam's Club® Mastercard®<br />
-Annual Fee: 0 <br />
-Name in code: synchrony_sams_club_mastercard <br >
-Benefits:
--Its excellent 5 percent cash back on gas (on up to $6,000 in yearly purchases, then 1 percent) is one of the best gas rewards rates available
--Your first $30 of Sam’s Club purchases within 30 days are covered with a matching statement credit
--Serves as both a credit card and your Sam’s Club membership card(monthly payment can be calculated for, very spec)
----
-Company: Synchrony <br />
-Card:PayPal Cashback Mastercard<br />
-Annual Fee: 0 <br />
-Name in code: synchrony_paypal_cashback_mastercard <br >
-Benefits:
--Offers a unique combo of 2 percent cash back on all purchases with the chance to earn 3 percent cash back at merchants that accept Paypal.
--The card charges no annual fee, making it affordable to pair with other rewards cards.
--PayPal integration makes this a great card for people who use PayPal and want to manage their card, payments and cashback rewards all in one place.
----
-Company: US Bank <br />
-Card: U.S. Bank Visa® Platinum Card<br />
-Annual Fee: 0 <br />
-Name in code: us_bank_visa_platinum <br >
-Benefits:
--It comes with cellphone protection when you pay your monthly phone bill with your card (up to two $600 claims per 12-month period, $25 deductible).
--Its intro APR offer is relatively long, giving cardholders one of the longest breaks from interest on balance transfers and new purchases.
----
-Company: US Bank <br />
-Card: U.S. Bank Cash+® Visa Signature® Card<br />
-Annual Fee: 0 <br />
-Name in code: us_bank_cash_plus_visa_signature <br >
-Benefits:
-- You can tailor your cash back rewards to the products and services on which you spend the most each quarter.
-- You won’t have to pay an annual fee for this card.
-- This card offers an introductory APR on purchases and balance transfers (for transfers made within 60 days of account opening).
----
-Company: US Bank <br />
-Card: U.S. Bank Cash+® Visa Signature® Card<br />
-Annual Fee: 0 <br />
-Name in code: us_bank_cash_plus_visa_signature <br >
-Benefits:
-- You can tailor your cash back rewards to the products and services on which you spend the most each quarter.
-- You won’t have to pay an annual fee for this card.
-- This card offers an introductory APR on purchases and balance transfers (for transfers made within 60 days of account opening).
----
-Company: US Bank <br />
-Card: U.S. Bank Altitude® Reserve Visa Infinite® Card<br />
-Annual Fee: 400 <br />
-Name in code: us_bank_altitude_reserve_visa_infinite <br >
-Benefits:
-- Lower annual fee compared to other cards in this category.
-- Valuable annual travel credits that, if used, effectively brings the cost of the card down to $75.
-- Up to $100 statement credit for Global Entry to TSA Precheck every four years
+# Synchrony Sam's Club Mastercard
+def synchrony_sams_club_mastercard(card):
+    tot = 0
+    tot += (card.gas * 5) / 100
+    tot += (card.total - card.gas) / 100
+    return tot
+
+# Synchrony PayPal Cashback Mastercard
+def synchrony_paypal_cashback_mastercard(card):
+    tot = 0
+    if card.digital_wallet:
+        tot += (card.total * 3) / 100
+    else:
+        tot += (card.total * 2) / 100
+    return tot
+
+# US Bank Cash+ Visa Signature Card
+def us_bank_cash_plus_visa_signature(card):
+    v1, v2 = card.extract_max_values(2)
+    tot = 0
+    if v1[1] == "Flights" or v2[1] == "Flights":
+        if card.flights > 2000:
+            tot += (2000 * 5) / 100 + ((card.flights - 2000) * 1) / 100
+        else:
+            tot += (card.flights * 5) / 100
+    else:
+        tot += (card.flights * 1) / 100
+
+    if v1[1] == "Groceries" or v2[1] == "Groceries":
+        if card.groceries > 2000:
+            tot += (2000 * 5) / 100 + ((card.groceries - 2000) * 1) / 100
+        else:
+            tot += (card.groceries * 5) / 100
+    else:
+        tot += (card.groceries * 2) / 100
+
+    if v1[1] == "Gas" or v2[1] == "Gas":
+        if card.gas > 2000:
+            tot += (2000 * 5) / 100 + ((card.gas - 2000) * 1) / 100
+        else:
+            tot += (card.gas * 5) / 100
+    else:
+        tot += (card.gas * 2) / 100
+
+    if v1[1] == "Dining" or v2[1] == "Dining":
+        if card.dining > 2000:
+            tot += (2000 * 5) / 100 + ((card.dining - 2000) * 1) / 100
+        else:
+            tot += (card.dining * 5) / 100
+    else:
+        tot += (card.dining * 2) / 100
+
+    if v1[1] == "Entertainment" or v2[1] == "Entertainment":
+        if card.entertainment > 2000:
+            tot += (2000 * 5) / 100 + ((card.entertainment - 2000) * 1) / 100
+        else:
+            tot += (card.entertainment * 5) / 100
+    else:
+        tot += (card.entertainment * 1) / 100
+
+    if v1[1] == "Car Rental" or v2[1] == "Car Rental":
+        if card.car_rental > 2000:
+            tot += (2000 * 5) / 100 + ((card.car_rental - 2000) * 1) / 100
+        else:
+            tot += (card.car_rental * 5) / 100
+    else:
+        tot += (card.car_rental * 1) / 100
+
+    if v1[1] == "Hotel" or v2[1] == "Hotel":
+        if card.hotel > 2000:
+            tot += (2000 * 5) / 100 + ((card.hotel - 2000) * 1) / 100
+        else:
+            tot += (card.hotel * 5) / 100
+    else:
+        tot += (card.hotel * 1) / 100
+
+    if v1[1] == "Retail" or v2[1] == "Retail":
+        if card.retail > 2000:
+            tot += (2000 * 5) / 100 + ((card.retail - 2000) * 1) / 100
+        else:
+            tot += (card.retail * 5) / 100
+    else:
+        tot += (card.retail * 1) / 100
+
+    return tot
+
+
+if __name__ == "__main__":

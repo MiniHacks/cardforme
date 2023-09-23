@@ -57,9 +57,3 @@ def extract_max_values(k):
             break
 
     return max_values
-
-# Example usage:
-my_list = [3, 1, 7, 2, 8, 5]
-k = 2  # Number of max values to extract
-max_vals = extract_max_values(my_list, k)
-print("Max Values:", max_vals)
