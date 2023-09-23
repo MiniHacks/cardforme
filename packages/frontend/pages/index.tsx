@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { Box, Heading, HStack, VStack } from "@chakra-ui/react";
+import { Box, Heading, HStack, VStack, Image } from "@chakra-ui/react";
 import PageLayout from "../components/Layout/PageLayout";
 import Head from 'next/head';
 import React from "react";
@@ -92,6 +92,22 @@ const Home: NextPage = () => {
             <Box>
             </Box>
           </Box>
+          <Image
+            src='images/discover_floating.png'
+            position="absolute"
+            top="520"
+            left="700"
+            width="40%"
+            height="40%"
+          />
+          <Image
+            src='images/floating_cards.png'
+            position="absolute"
+            top="70"
+            left="650"
+            width="60%"
+            height="60%"
+            />
         </Box>
       </HStack>
     </PageLayout>
