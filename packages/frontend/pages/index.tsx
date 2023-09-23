@@ -3,76 +3,99 @@ import { Box, Heading, HStack, VStack } from "@chakra-ui/react";
 import PageLayout from "../components/Layout/PageLayout";
 import Head from 'next/head';
 import React from "react";
+import { Text } from "@chakra-ui/react";
+import { Background } from "../components/Background";
+import { useRouter } from "next/router";
 
 const Home: NextPage = () => {
+  const router = useRouter();
 
-  const gradientStyle = {
-    background: "linear-gradient(134.57deg, #FF4900 25.78%, #FF0080 39.24%, #8152FF 52.68%)",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-    backgroundClip: "text",
-    textFillColor: "transparent",
+  const handleButtonClick = () => {
+    // Use the router to navigate to a different page
+    router.push("main-page"); // Replace with the actual path
   };
-
   return (
+    <Box backgroundColor="#06021C">
     <PageLayout title={"cardforme"}>
       <HStack spacing={0} w="100%">
         <Box width="50%" height="100vh">
-          <HStack paddingLeft={10} paddingTop={6}>
-            <Heading fontFamily="Monoton"
-                     fontWeight="400"
-                     fontSize="65px"
-                     lineHeight="110%"
-                     color="#FF8A00"
-                     textShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
-            >c</Heading>
-            <Heading fontFamily="Monoton"
-                     fontWeight="400"
-                     fontSize="65px"
-                     lineHeight="110%"
-                     color="#FF00C7"
-                     textShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
-            >m</Heading>
+          <HStack paddingLeft={10} paddingTop={10} spacing={-1.75}>
+            <Text fontFamily="Monoton"
+                  fontWeight="400"
+                  fontSize="65px"
+                  lineHeight="110%"
+                  color="#FF8A00"
+                  textShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
+
+            >c</Text>
+            <Text fontFamily="Monoton"
+                  fontWeight="400"
+                  fontSize="65px"
+                  lineHeight="110%"
+                  color="#FF00C7"
+                  textShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
+            >m</Text>
           </HStack>
-          <VStack align="left" paddingLeft="10" paddingTop="30" >
-            <Heading fontFamily="Outfit"
-                     fontWeight="700"
-                     fontSize="100px"
-                     lineHeight="90%"
+          <VStack align="left" paddingLeft="10" paddingTop="40" >
+            <Text fontFamily="Outfit"
+                  fontWeight="700"
+                  fontSize="100px"
+                  lineHeight="90%"
+                  textColor="#FFFFFF"
 
             >
               find the
-            </Heading>
-            <Heading fontFamily="Outfit"
-                     fontWeight="700"
-                     fontSize="100px"
-                     lineHeight="90%"
+            </Text>
+            <Text fontFamily="Outfit"
+                  fontWeight="700"
+                  fontSize="100px"
+                  lineHeight="90%"
+                  textColor="#FFFFFF"
             >
               card for
-            </Heading>
-            <Heading fontFamily="Outfit"
-                     fontWeight="700"
-                     fontSize="100px"
-                     lineHeight="90%"
-                     style={gradientStyle}
+            </Text>
+            <Text
+              bgGradient='linear(to-l, #5200FF,#5200FF, #5200FF,#FF0080, #FF8A00)'
+              bgClip='text'
+              fontFamily="Outfit"
+              fontWeight="900"
+              fontSize="100px"
+              lineHeight="90%"
+              paddingBottom="100px"
             >
               you
-            </Heading>
+            </Text>
+            <Box
+              as='button'
+              color='white'
+              fontWeight='bold'
+              borderRadius='12px'
+              width="200px"
+              height="50px"
+              bgGradient='linear(to-l, #5200FF,#FF0080, #FF8A00)'
+              marginTop="50px"
+              onClick={handleButtonClick}
+            >
+              <Text >
+                Start Now
+              </Text>
+            </Box>
           </VStack>
         </Box>
+
         <Box width="50%" height="100vh">
           <Box style={{
             width: '100%',
             height: '100%',
-            background: 'conic-gradient(from 180deg at 0.00% 100.00%, #5200FF 120deg, #FF8A00 360deg)'
+            background: 'conic-gradient(from 90deg at 0.00% 100.00%, #5200FF 180deg, #FF8A00 360deg)'
           }}>
             <Box>
             </Box>
           </Box>
         </Box>
-
       </HStack>
     </PageLayout>
+    </Box>
   );
 };
 
