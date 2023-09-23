@@ -1,3 +1,4 @@
+import heapq
 class Transactions:
 
     def __init__(self, response):
@@ -33,3 +34,32 @@ class Transactions:
 
     def set_benefits(self, benefits):
         self.benefits = benefits
+
+def extract_max_values(k):
+    # Create a max heap (negate the values to simulate a max heap)
+
+    heapq.heappush(max_heap, (-self.card.flights, "Flights"))
+    heapq.heappush(max_heap, (-self.card.groceries, "Groceries"))
+    heapq.heappush(max_heap, (-self.card.gas, "Gas"))
+    heapq.heappush(max_heap, (-self.card.dining, "Dining"))
+    heapq.heappush(max_heap, (-self.card.entertainment, "Entertainment"))
+    heapq.heappush(max_heap, (-self.card.car_rental, "Car Rental"))
+    heapq.heappush(max_heap, (-self.card.hotel, "Hotel"))
+    heapq.heappush(max_heap, (-self.card.retail, "Retail"))
+
+
+    max_values = []
+    for _ in range(k):
+        if max_heap:
+            max_value = -heapq.heappop(max_heap)  # Negate back to get the actual max value
+            max_values.append(max_value)
+        else:
+            break
+
+    return max_values
+
+# Example usage:
+my_list = [3, 1, 7, 2, 8, 5]
+k = 2  # Number of max values to extract
+max_vals = extract_max_values(my_list, k)
+print("Max Values:", max_vals)

@@ -63,165 +63,169 @@ def amex_blue_cash_preferred(card): #SUS CARD
     return tot
 
 # American Express Business Gold Card
+def amex_business_gold(card):
+    v1, v2 = card.extract_max_values(2)
+    tot = 0
+    if v1[1] == "Flights" or v2[1] == "Flights":
+        tot += (card.flights * 4) / 100
+    else:
+        tot += (card.flights * 1) / 100
+
+    if v1[1] == "Restaurants" or v2[1] == "Restaurants":
+        tot += (card.restaurants * 4) / 100
+    else:
+        tot += (card.restaurants * 1) / 100
+
+    if v1[1] == "Gas" or v2[1] == "Gas":
+        tot += (card.gas * 4) / 100
+    else:
+        tot += (card.gas * 1) / 100
+
+    if v1[1] == "Groceries" or v2[1] == "Groceries":
+        tot += (card.groceries * 4) / 100
+    else:
+        tot += (card.groceries * 1) / 100
+
+    if v1[1] == "Entertainment" or v2[1] == "Entertainment":
+        tot += (card.entertainment * 4) / 100
+    else:
+        tot += (card.entertainment * 1) / 100
+
+    if v1[1] == "Car Rental" or v2[1] == "Car Rental":
+        tot += (card.car_rental * 4) / 100
+    else:
+        tot += (card.car_rental * 1) / 100
+
+    if v1[1] == "Hotel" or v2[1] == "Hotel":
+        tot += (card.hotel * 4) / 100
+    else:
+        tot += (card.hotel * 1) / 100
+
+    if v1[1] == "Retail" or v2[1] == "Retail":
+        tot += (card.retail * 4) / 100
+    else:
+        tot += (card.retail * 1) / 100
+
+    tot -= 295
+    return tot
 
 
-Company: American Express <br />
-Card: American Express Business Gold Card <br />
-Annual Fee: 295 <br />
-Name in code: amex_business_gold <br >
-Benefits:
--  Get 4X Membership Rewards points on the 2 select categories where your business spent the most each month. (**4X points apply to the first $150,000 in combined purchases from these 2 categories each calendar year.*)
-- 1X is earned for other purchases. **
----
-Company: Bank of America <br />
-Card: Bank of America Travel Rewards credit card <br />
-Annual Fee: 0 <br />
-Name in code: bofa_travel_rewards <br >
-Benefits:
-- Earn unlimited 1.5 points per $1 spent on all purchases, with no annual fee and no foreign transaction fees and your points don't expire.
----
-Company: Bank of America <br />
-Card: Bank of America Customized Cash Rewards credit card <br />
-Annual Fee: 0 <br />
-Name in code: bofa_customized_cash_rewards <br >
-Benefits:
-- Earn 3% cash back in the category of your choice (up to $2,500 in combined choice category/grocery store/wholesale club quarterly purchases).
-- 2% at grocery stores and wholesale clubs (up to $2,500 in combined choice category/grocery store/wholesale club quarterly purchases).
-- 1% Earn unlimited 1% on all other purchases.
----
-Company: Bank of America <br />
-Card: Bank of America Business Advantage Customized Cash Rewards Mastercard credit card <br />
-Annual Fee: 0 <br />
-Name in code: bofa_business_advantage_customized_cash_rewards_mastercard <br >
-Benefits:
-- 3% cash back in the category of your choice (on the first $50,000 in combined choice category/dining purchases each calendar year, 1% thereafter).
-- 2% cash back on dining purchases (on the first $50,000 in combined choice category/dining purchases each calendar year, 1% thereafter).
-- 1% unlimited cash back on all other purchases.
----
-Company: Bank of America <br />
-Card: Bank of America Premium Rewards credit card <br />
-Annual Fee: 95 <br />
-Name in code: bofa_premium_rewards <br >
-Benefits:
-- 2 points for every $1 spent on travel and dining purchases
-- 1.5 points for every $1 spent on all other purchases
----
-Company: Bank of America <br />
-Card: Bank of America Unlimited Cash Rewards credit card <br />
-Annual Fee: 0 <br />
-Name in code: bofa_unlimited_rewards <br >
-Benefits:
-- Earn unlimited 1.5% cash back on all purchases.
----
-Company: Barclays <br />
-Card: AAdvantage Aviator Red World Elite Mastercard <br />
-Annual Fee: 99 <br />
-Name in code: barclays_aviator_red_world_elite_mastercard<br >
-Benefits:
-- 2X miles per dollar spent on eligible American Airlines purchases and 1X miles on all other purchases
----
-Company: Barclays <br />
-Card: The Hawaiian Airlines World Elite Mastercard <br />
-Annual Fee: 99 <br />
-Name in code: barclays_the_hawaiian_airlines_world_elite_mastercard <br >
-Benefits:
-- Earn 3X miles per $1 on eligible Hawaiian Airlines purchases and 2X miles per $1 on grocery store (excluding Target and Walmart purchases), gas and dining transactions; 1X mile per $1 on all other transactions.
----
-Company: Barclays <br />
-Card: JetBlue Card <br />
-Annual Fee: 0 <br />
-Name in code: barclays_jetblue <br >
-Benefits:
-- 3X points on eligible JetBlue purchases, 2X points at restaurants and grocery stores and 1X points on all other purchases
----
-Company: Capital One <br />
-Card: Capital One Quicksilver Cash Rewards Credit Card <br />
-Annual Fee: 0 <br />
-Name in code: captial_one_quicksilver_cash_rewards <br >
-Benefits:
--  Earn unlimited 5% cash back on hotels and rental cars booked through Capital One Travel, where you'll get Capital One's best prices on thousands of trip options. Terms apply
-- Earn unlimited 1.5% cash back on every purchase, every day
----
-Company: Capital One <br />
-Card: Capital One SavorOne Cash Rewards Credit Card <br />
-Annual Fee: 0 <br />
-Name in code: captial_one_savorone_cash_rewards <br >
-Benefits:
-- Earn 10% Cash Back on purchases made through Uber & Uber Eats, plus complimentary Uber One membership statement credits through 11/14/2024
-- Earn 8% Cash Back on Capital One Entertainment purchases
-- Earn unlimited 5% Cash Back on hotels and rental cars booked through Capital One Travel, where you'll get Capital One's best prices on thousands of trip options. Terms apply
-- Earn 3% Cash Back on dining and at grocery stores (excluding superstores like Walmart® and Target®)
-- Earn 3% Cash Back on popular streaming services and entertainment
-- Earn 1% Cash Back on all other purchases
----
-Company: Capital One <br />
-Card: Capital One Venture Rewards Credit Card <br />
-Annual Fee: 95 <br />
-Name in code: captial_one_venture_rewards <br >
-Benefits:
-- 5 Miles per dollar on hotels and rental cars booked through Capital One Travel
--  2 Miles per dollar on every purchase, every day
----
-Company: Capital One <br />
-Card: Capital One VentureOne Rewards Credit Card <br />
-Annual Fee: 0 <br />
-Name in code: captial_one_ventureone_rewards <br >
-Benefits:
-- 5 Miles per dollar on hotels and rental cars booked through Capital One Travel
-- 1.25 Miles per dollar on every purchase, every day
----
-Company: Capital One <br />
-Card: Capital One Venture X Rewards Credit Card <br />
-Annual Fee: 395 <br />
-Name in code: captial_one_venture_x_rewards <br >
-Benefits:
-- 10 Miles per dollar on hotels and rental cars booked through Capital One Travel
-- 5 Miles per dollar on flights booked through Capital One Travel
-- 2 Miles per dollar on every purchase, every day
----
-Company: Capital One <br />
-Card: Capital One Spark Miles for Business <br />
-Annual Fee: 95 <br />
-Name in code: captial_one_spark_miles_for_business <br >
-Benefits:
-- Unlimited 5X miles on hotels and rental cars booked through Capital One Travel
--  Earn unlimited 2X miles per dollar on every purchase, everywhere, no limits or category restrictions, and miles won't expire for the life of the account.
----
-Company: Chase <br />
-Card: Chase Sapphire Preferred Card <br />
-Annual Fee: 95 <br />
-Name in code: chase_sapphire_preferred <br >
-Benefits:
-- 5x on travel purchased through Chase Ultimate Rewards®
-- 3x on dining
-- 2x on all other travel purchases, plus more
----
-Company: Chase <br />
-Card: Ink Business Cash® Credit Card <br />
-Annual Fee: 0 <br />
-Name in code: chase_ink_business_cash <br >
-Benefits:
-- Earn 5% cash back on the first $25,000 spent in combined purchases at office supply stores and on internet, cable and phone services each account anniversary year
-- Earn 2% cash back on the first $25,000 spent in combined purchases at gas stations and restaurants each account anniversary year
-- Earn 1% cash back on all other card purchases with no limit to the amount you can earn
----
-Company: Chase <br />
-Card: Chase Sapphire Reserve® <br />
-Annual Fee: 550 <br />
-Name in code: chase_sapphire_reserve <br >
-Benefits:
-- Earn 1 point per $1 spent on all other purchases
-- Earn 3x points on other travel and dining.
-- Earn 10x total points on hotels and car rentals when you purchase travel through Chase Ultimate Rewards®.
-- Earn 1 point per $1 spent on all other purchases
----
-Company: Chase <br />
-Card: Ink Business Unlimited® Credit Card <br />
-Annual Fee: 900 <br />
-Name in code: chase_ink_business_unlimited <br >
-Benefits:
--  Earn unlimited 1.5% cash back on every purchase made for your business
----
+# Bank of America Travel Rewards credit card
+def bofa_travel_rewards(card):
+    tot = (card.total * 1.5) / 100
+    return tot
+
+# Bank of America Premium Rewards credit card
+def bofa_premium_rewards(card):
+    tot = 0
+    tot += (card.flights * 2) / 100
+    tot += (card.dining * 2) / 100
+    tot += (card.total - card.flights - card.dining) * 1.5 / 100
+    tot -= 95
+    return tot
+
+# Bank of America Unlimited Cash Rewards credit card
+def bofa_unlimited_rewards(card):
+    tot = (card.total * 1.5) / 100
+    return tot
+
+# Barclays Advantage Aviator Red World Elite Mastercard
+def barclays_aviator_red_world_elite_mastercard(card):
+    tot = 0
+    tot += (card.airlines * 2) / 100 # assuming airlines = eligible American Airlines purchases
+    tot += (card.total - card.airlines) / 100
+    tot -= 99
+    return tot
+
+# Barclays The Hawaiian Airlines World Elite Mastercard
+def barclays_the_hawaiian_airlines_world_elite_mastercard(card):
+    tot = 0
+    tot += (card.airlines * 3) / 100 # assuming airlines = eligible Hawaiian Airlines purchases
+    tot += (card.groceries * 2) / 100 # assuming groceries = grocery store (excluding Target and Walmart purchases)
+    tot += (card.gas * 2) / 100
+    tot += (card.dining * 2) / 100
+    tot += (card.total - card.airlines - card.groceries - card.gas - card.dining) / 100
+    tot -= 99
+    return tot
+
+# Barclays JetBlue Card
+def barclays_jetblue(card):
+    tot = 0
+    tot += (card.airlines * 3) / 100 # assuming airlines = eligible JetBlue purchases
+    tot += (card.restaurants * 2) / 100
+    tot += (card.groceries * 2) / 100
+    tot += (card.total - card.airlines - card.restaurants - card.groceries) / 100
+    return tot
+
+# Capital One Quicksilver Cash Rewards Credit Card
+def capital_one_quicksilver_cash_rewards(card):
+    tot = 0
+    tot += (card.hotels * 5) / 100 # assuming hotels = hotels booked through Capital One Travel
+    tot += (card.rental_cars * 5) / 100 # assuming rental_cars = rental cars booked through Capital One Travel
+    tot += (card.total - card.hotels - card.rental_cars) * 1.5 / 100
+    return tot
+
+# Capital One Venture Rewards Credit Card
+def capital_one_venture_rewards(card):
+    tot = 0
+    tot += (card.hotels * 5) / 100 # assuming hotels = hotels booked through Capital One Travel
+    tot += (card.rental_cars * 5) / 100 # assuming rental_cars = rental cars booked through Capital One Travel
+    tot += (card.total - card.hotels - card.rental_cars) * 2 / 100
+    tot -= 95
+    return tot
+
+# Capital One Venture X Rewards Credit Card
+def capital_one_venture_x_rewards(card):
+    tot = 0
+    tot += (card.hotels * 10) / 100 # assuming hotels = hotels booked through Capital One Travel
+    tot += (card.rental_cars * 10) / 100 # assuming rental_cars = rental cars booked through Capital One Travel
+    tot += (card.flights * 5) / 100 # assuming flights = flights booked through Capital One Travel
+    tot += (card.total - card.hotels - card.rental_cars - card.flights) * 2 / 100
+    tot -= 395
+    return tot
+
+# Capital One Spark Miles for Business
+def capital_one_spark_miles_for_business(card):
+    tot = 0
+    tot += (card.hotels * 5) / 100 # assuming hotels = hotels booked through Capital One Travel
+    tot += (card.rental_cars * 5) / 100 # assuming rental_cars = rental cars booked through Capital One Travel
+    tot += (card.total - card.hotels - card.rental_cars) * 2 / 100
+    tot -= 95
+    return tot
+
+# Chase Sapphire Preferred Card
+def chase_sapphire_preferred(card):
+    tot = 0
+    tot += (card.flights * 5) / 100 # assuming travel = travel purchased through Chase Ultimate Rewards
+    tot += (card.dining * 3) / 100
+    tot += (card.total - card.flights - card.dining) * 2 / 100
+    tot -= 95
+    return tot
+
+# Chase Sapphire Reserve
+def chase_sapphire_reserve(card):
+    tot = 0
+    tot += (card.flights * 10) / 100 # assuming travel = travel purchased through Chase Ultimate Rewards
+    tot += (card.dining * 3) / 100
+    tot += (card.total - card.flights - card.dining) * 1 / 100
+    tot -= 550
+    return tot
+
+# Chase Ink Business Unlimited
+def chase_ink_business_unlimited(card):
+    tot = 0
+    tot += (card.total * 1.5) / 100
+    tot -= 900
+    return tot
+
+# Citi Custom Cash
+def citi_custom_cash(card):
+    tot = 0
+    v1 = card.extract_max_values(1)
+    if v1[1] == "Groceries":
+        tot += (card.groceries * 5) / 100
+
+    return tot
 Company: Citi <br />
 Card: Citi Custom Cash® Card <br />
 Annual Fee: 0 <br />
