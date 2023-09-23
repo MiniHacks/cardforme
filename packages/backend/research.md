@@ -57,24 +57,6 @@ Benefits:
 - Earn unlimited 1.5 points per $1 spent on all purchases, with no annual fee and no foreign transaction fees and your points don't expire.
 ---
 Company: Bank of America <br />
-Card: Bank of America Customized Cash Rewards credit card <br />
-Annual Fee: 0 <br />
-Name in code: bofa_customized_cash_rewards <br >
-Benefits:
-- Earn 3% cash back in the category of your choice (up to $2,500 in combined choice category/grocery store/wholesale club quarterly purchases). 
-- 2% at grocery stores and wholesale clubs (up to $2,500 in combined choice category/grocery store/wholesale club quarterly purchases).
-- 1% Earn unlimited 1% on all other purchases.
---- 
-Company: Bank of America <br />
-Card: Bank of America Business Advantage Customized Cash Rewards Mastercard credit card <br />
-Annual Fee: 0 <br />
-Name in code: bofa_business_advantage_customized_cash_rewards_mastercard <br >
-Benefits:
-- 3% cash back in the category of your choice (on the first $50,000 in combined choice category/dining purchases each calendar year, 1% thereafter).
-- 2% cash back on dining purchases (on the first $50,000 in combined choice category/dining purchases each calendar year, 1% thereafter).
-- 1% unlimited cash back on all other purchases.
---- 
-Company: Bank of America <br />
 Card: Bank of America Premium Rewards credit card <br />
 Annual Fee: 95 <br />
 Name in code: bofa_premium_rewards <br >
@@ -118,18 +100,6 @@ Benefits:
 -  Earn unlimited 5% cash back on hotels and rental cars booked through Capital One Travel, where you'll get Capital One's best prices on thousands of trip options. Terms apply
 - Earn unlimited 1.5% cash back on every purchase, every day
 --- 
-Company: Capital One <br />
-Card: Capital One SavorOne Cash Rewards Credit Card <br />
-Annual Fee: 0 <br />
-Name in code: captial_one_savorone_cash_rewards <br >
-Benefits:
-- Earn 10% Cash Back on purchases made through Uber & Uber Eats, plus complimentary Uber One membership statement credits through 11/14/2024
-- Earn 8% Cash Back on Capital One Entertainment purchases
-- Earn unlimited 5% Cash Back on hotels and rental cars booked through Capital One Travel, where you'll get Capital One's best prices on thousands of trip options. Terms apply
-- Earn 3% Cash Back on dining and at grocery stores (excluding superstores like Walmart® and Target®)
-- Earn 3% Cash Back on popular streaming services and entertainment
-- Earn 1% Cash Back on all other purchases
----
 Company: Capital One <br />
 Card: Capital One Venture Rewards Credit Card <br />
 Annual Fee: 95 <br />
@@ -215,7 +185,7 @@ Benefits:
 ---
 Company: Citi <br />
 Card: Citi Premier Card <br />
-Annual Fee: 0 <br />
+Annual Fee: 95 <br />
 Name in code: citi_premier <br >
 Benefits:
 - 3X ThankYou Points per $1 on restaurant, supermarket, gas station, hotel and air travel purchases
@@ -242,7 +212,13 @@ Annual Fee: 0 <br />
 Name in code: discover_it_cash_back <br >
 Benefits:
 - Earn 5% cash back on everyday purchases at different places each quarter like Amazon.com, grocery stores, restaurants, and gas stations, up to the quarterly maximum when you activate.
-- Plus, earn unlimited 1% cash back on all other purchases – automatically.
+- Plus, earn unlimi
+---
+Company: Discover <br />
+Card: Discover Student credit card <br />
+Annual Fee: 0 <br />
+Name in code: discover_student_credit_card <br >
+Benefits:Students earn 5% cash back on everyday purchases during the school year (and all year long) at different places each quarter.
 ---
 Company: Discover <br />
 Card: Discover it® Balance Transfer <br />
@@ -266,14 +242,6 @@ Name in code: discover_it_chrome <br >
 Benefits:
 - Plus, earn unlimited 1% cash back on all other purchases - automatically.
 - Earn cash back on your next road trip with 2% cash back at Gas Stations and Restaurants on up to $1,000 in combined purchases each quarter.
----
-Company: Discover <br />
-Card: Discover it® Student Chrome<br />
-Annual Fee: 0 <br />
-Name in code: discover_it_student_chrome <br >
-Benefits:
-- Plus, earn unlimited 1% cash back on all other purchases - automatically.
-- Earn 2% cash back at Gas Stations and Restaurants on up to $1,000 in combined purchases each quarter.
 ---
 Company: Synchrony <br />
 Card: Sam's Club® Mastercard®<br />
@@ -392,11 +360,13 @@ Benefits:
 - Earn 2 points per dollar on gas and groceries.
 - Earn 1 point per dollar on other purchases.
 ---
-Company: USAA <br />
-Card: USAA Rewards™ Visa® Signature Credit Card <br />
+Company: Apple <br />
+Card: Apple Card <br />
 Annual Fee: 0 <br />
-Name in code: usaa_rewards_visa_signature <br >
+Name in code: apple_card <br >
 Benefits:
-- Earn 2 points per dollar on gas and dining, including restaurants and fast food establishments.
-- Earn 1 point per dollar on other purchases.
+- 3% cash back on Apple products, services, and stores (including the App Store and Apple Store).
+- 2% cash back on all other purchases made using Apple Pay.
+- 1% cash back on purchases made with the physical titanium card or where Apple Pay is not accepted.
 ---
+
