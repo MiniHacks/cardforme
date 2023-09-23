@@ -1,2 +1,6 @@
 fastapi==0.74.0
 uvicorn[standard]==0.17.5
+Flask==2.1.0
+plaid_python==14.0.0
+python-dotenv==0.15.0
+itsdangerous==2.0.1
