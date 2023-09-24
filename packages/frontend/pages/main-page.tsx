@@ -29,25 +29,41 @@ const Home: NextPage = () => {
     flexDirection: "column", // Change to column layout
     alignItems: "center",
     justifyContent: "center",
+    position: "relative", // Add relative positioning
   };
 
   const isLastPage = currentIndex + cardsPerSlide >= numViewCards;
 
   return (
     <Box style={carouselStyle}>
+      {/* Left Icon */}
+      <IconButton
+        icon={<Icon as={ArrowLeftIcon} boxSize={4} />}
+        aria-label="Previous"
+        isDisabled={currentIndex === 0}
+        onClick={handlePrevious}
+        position="absolute"
+        left="20px"
+        top="50%"
+        transform="translateY(-50%)"
+      />
+
+      {/* Right Icon */}
+      <IconButton
+        icon={<Icon as={ArrowRightIcon} boxSize={4} />}
+        aria-label="Next"
+        isDisabled={isLastPage}
+        onClick={handleNext}
+        position="absolute"
+        right="20px"
+        top="50%"
+        transform="translateY(-50%)"
+      />
+
       {/* Header */}
       <Heading as="h1" size="2xl" mb={4}>
         Your Carousel Header
       </Heading>
-
-      {/* Previous Button */}
-      <IconButton
-        icon={<Icon as={ArrowLeftIcon} boxSize={8} />}
-        aria-label="Previous"
-        isDisabled={currentIndex === 0}
-        onClick={handlePrevious}
-        mb={4}
-      />
 
       <Flex justifyContent="center" alignItems="center">
         {Array.from({ length: cardsPerSlide }).map((_, index) => (
@@ -62,15 +78,6 @@ const Home: NextPage = () => {
           </div>
         ))}
       </Flex>
-
-      {/* Next Button */}
-      <IconButton
-        icon={<Icon as={ArrowRightIcon} boxSize={8} />}
-        aria-label="Next"
-        isDisabled={isLastPage}
-        onClick={handleNext}
-        mt={4}
-      />
     </Box>
   );
 };

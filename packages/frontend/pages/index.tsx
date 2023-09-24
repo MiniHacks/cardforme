@@ -8,6 +8,7 @@ import { Background } from "../components/Background";
 import PageLayout from "../components/Layout/PageLayout";
 
 export default function PlaidLink() {
+  const router = useRouter();
   const [token, setToken] = useState(null);
 
   useEffect(() => {
@@ -29,7 +30,7 @@ export default function PlaidLink() {
       },
       body: JSON.stringify({ public_token: publicToken }),
     });
-    Router.push("/dashboard");
+    router.push("/main-page");
   }, []);
 
   const { open, ready } = usePlaidLink({
