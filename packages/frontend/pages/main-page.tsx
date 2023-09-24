@@ -13,12 +13,9 @@ import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
 import React, { useEffect, useState } from "react";
 
 import GradientSpotlight from "../components/GradientSpotlight";
-<<<<<<< HEAD
 import ViewCard from "../components/ViewCard";
 import PieCard from "../components/PieCard";
-=======
 import allCardData from "../components/allCardData.json";
->>>>>>> aa2e9e6847669e76607803e7b0432ddfdee65592
 
 const Home: NextPage = () => {
   const [transactions, setTransactions] = useState({}); // Replace with the correct type
@@ -232,6 +229,87 @@ const Home: NextPage = () => {
           {/* ))} */}
         </Flex>
         {/* Add Next and Previous buttons here */}
+      </Box>
+      <Box>
+        <Heading
+          color={"#FFFFFF"}
+          fontFamily={"Outfit"}
+          ml={192}
+          mt={50}
+          pt={30}
+          pb={15}
+        >
+          Your Data
+        </Heading>
+        <HStack justifyContent={"center"}>
+          <Box pr={"10%"}>
+            <VStack justifyContent={"left"}>
+              <Heading
+                fontFamily={"Outfit"}
+                fontWeight={"600"}
+                textAlign={"center"}
+                fontSize={"50px"}
+                lineHeight={"90%"}
+                textColor={"#FFFFFF"}
+              >
+                Here’s a pie chart
+              </Heading>
+              <Heading
+                fontFamily={"Outfit"}
+                fontWeight={"600"}
+                textAlign={"center"}
+                fontSize={"50px"}
+                lineHeight={"115%"}
+                textColor={"#FFFFFF"}
+              >
+                of this month’s
+              </Heading>
+              <Heading
+                fontFamily={"Outfit"}
+                fontWeight={"600"}
+                textAlign={"left"}
+                fontSize={"50px"}
+                pb={"20px"}
+                lineHeight={"90%"}
+                textColor={"#FFFFFF"}
+              >
+                spending.
+              </Heading>
+              <Box
+                as={"button"}
+                color={"white"}
+                fontWeight={"bold"}
+                borderRadius={"12px"}
+                width={"200px"}
+                height={"50px"}
+                bgGradient={"linear(to-l, #5200FF,#FF0080, #FF8A00)"}
+                marginTop={"50px"}
+                zIndex={1}
+                _hover={{
+                  transform: "scale(1.02)",
+                }} // Call the fetchTransactions function when the button is clicked
+              >
+                <Text>Fetch Transactions</Text>
+              </Box>
+            </VStack>
+          </Box>
+          <Box pr={"10px"}>
+            <VStack>
+              <Text
+                fontFamily={"Outfit"}
+                fontWeight={"500"}
+                textAlign={"center"}
+                fontSize={"30px"}
+                lineHeight={"115%"}
+                textColor={"#FFFFFF"}
+                mt={-10}
+              >
+                Total Spending: <b>$1,000</b>
+              </Text>
+              <PieCard />
+            </VStack>
+          </Box>
+        </HStack>
       </Box>
     </div>
   );
