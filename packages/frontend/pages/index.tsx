@@ -72,7 +72,7 @@ export default function PlaidLink() {
   return (
     <Box backgroundColor={"#06021C"}>
       <PageLayout title={"cardforme"}>
-        <HStack spacing={0} w={"100%"}>
+        <HStack spacing={0} w={"100%"} h={"100%"}>
           <Box width={"50%"} height={"100vh"}>
             <HStack paddingLeft={10} paddingTop={10} spacing={-1.75}>
               <Text
@@ -146,23 +146,23 @@ export default function PlaidLink() {
               >
                 <Text>Start Now</Text>
               </Box>
-              <Box
-                as={"button"}
-                color={"white"}
-                fontWeight={"bold"}
-                borderRadius={"12px"}
-                width={"200px"}
-                height={"50px"}
-                bgGradient={"linear(to-l, #5200FF,#FF0080, #FF8A00)"}
-                marginTop={"50px"}
-                zIndex={1}
-                _hover={{
-                  transform: "scale(1.02)",
-                }}
-                onClick={fetchTransactions} // Call the fetchTransactions function when the button is clicked
-              >
-                <Text>Fetch Transactions</Text>
-              </Box>
+              {/* <Box */}
+              {/*  as={"button"} */}
+              {/*  color={"white"} */}
+              {/*  fontWeight={"bold"} */}
+              {/*  borderRadius={"12px"} */}
+              {/*  width={"200px"} */}
+              {/*  height={"50px"} */}
+              {/*  bgGradient={"linear(to-l, #5200FF,#FF0080, #FF8A00)"} */}
+              {/*  marginTop={"50px"} */}
+              {/*  zIndex={1} */}
+              {/*  _hover={{ */}
+              {/*    transform: "scale(1.02)", */}
+              {/*  }} */}
+              {/*  onClick={fetchTransactions} // Call the fetchTransactions function when the button is clicked */}
+              {/* > */}
+              {/*  <Text>Fetch Transactions</Text> */}
+              {/* </Box> */}
             </VStack>
           </Box>
           <Box
@@ -171,7 +171,6 @@ export default function PlaidLink() {
             left={"-30"}
             width={"100%"}
             height={"100%"}
-
           >
             <GradientSpotlight />
           </Box>
@@ -190,8 +189,8 @@ export default function PlaidLink() {
             <Image
               src={"images/discover_floating.png"}
               position={"absolute"}
-              top={"520"}
-              left={"700"}
+              top={"460"}
+              left={"680"}
               width={"40%"}
               height={"40%"}
             />
