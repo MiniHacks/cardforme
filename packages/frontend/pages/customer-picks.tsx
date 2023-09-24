@@ -1,8 +1,8 @@
+// Home.js
 import type { NextPage } from "next";
-import { Box, Flex, Heading, IconButton, Icon } from "@chakra-ui/react";
-import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
+import { Box, Flex, Heading } from "@chakra-ui/react";
 import ViewCard from "../components/ViewCard";
-import React, { useState } from "react";
+import React from "react";
 import GradientSpotlight from "../components/GradientSpotlight";
 
 const Home: NextPage = () => {
@@ -14,34 +14,21 @@ const Home: NextPage = () => {
       link: "https://www.americanexpress.com/us/credit-cards/card/platinum/",
     },
     {
-      imageSrc: "/images/amex_platinum.png",
-      cardName: "Amex Platinum",
+      imageSrc: "/images/chase_sapphire_reserve.png",
+      cardName: "Sapphire Reserve",
       cardDescription: "Travel & Hotel credit",
-      link: "https://www.americanexpress.com/us/credit-cards/card/platinum/",
+      link: "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
     },
     {
-      imageSrc: "/images/amex_platinum.png",
-      cardName: "Amex Platinum",
-      cardDescription: "Travel & Hotel credit",
-      link: "https://www.americanexpress.com/us/credit-cards/card/platinum/",
+      imageSrc: "/images/discover_it_cash_back.png",
+      cardName: "Discover It - CB",
+      cardDescription: "Cash back credit",
+      link: "https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited",
     },
-    {
-      imageSrc: "/images/amex_platinum.png",
-      cardName: "Amex Platinum",
-      cardDescription: "Travel & Hotel credit",
-      link: "https://www.americanexpress.com/us/credit-cards/card/platinum/",
-    },
-    {
-      imageSrc: "/images/amex_platinum.png",
-      cardName: "Amex Platinum",
-      cardDescription: "Travel & Hotel credit",
-      link: "https://www.americanexpress.com/us/credit-cards/card/platinum/",
-    },
-    // Add more duplicates if needed
   ];
 
   const cardsPerSlide = 3;
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = React.useState(0);
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + cardsPerSlide) % cardsData.length);
@@ -74,63 +61,25 @@ const Home: NextPage = () => {
   return (
     <div style={pageStyle}>
       <Box>
-        <Heading color="#FFFFFF" fontFamily="Outfit" ml={192} pt={25} pb={15}>
+        <Heading color="#FFFFFF" fontFamily="Outfit" ml={192} pt={25} pb={15} >
           Customer Favorites
         </Heading>
       </Box>
       <Box style={carouselStyle}>
-        {/* GradientSpotlight components */}
-        <Box
-          position="absolute"
-          left="-80px"
-          top="100px"
-          zIndex={0} // Set a lower zIndex
-        >
+        <Box position="absolute" left="-80px" top="100px">
           <GradientSpotlight /> {/* Use the GradientSpotlight component */}
         </Box>
-        <Box
-          position="absolute"
-          left="400px"
-          top="0px"
-          zIndex={0} // Set a lower zIndex
-        >
+        <Box position="absolute" left="400px" top="0px">
           <GradientSpotlight /> {/* Use the GradientSpotlight component */}
         </Box>
-        <Box
-          position="absolute"
-          left="1000px"
-          top="-200px"
-          zIndex={0} // Set a lower zIndex
-        >
+        <Box position="absolute" left="1000px" top="-200px" deg="180px">
           <GradientSpotlight /> {/* Use the GradientSpotlight component */}
         </Box>
-        {/* Navigation Buttons */}
-        <IconButton
-          icon={<Icon as={ArrowLeftIcon} boxSize={4} />}
-          aria-label="Previous"
-          isDisabled={currentIndex === 0}
-          onClick={handlePrevious}
-          position="absolute"
-          left="20px"
-          top="50%"
-          transform="translateY(-50%)"
-        />
-        <IconButton
-          icon={<Icon as={ArrowRightIcon} boxSize={4} />}
-          aria-label="Next"
-          isDisabled={isLastPage}
-          onClick={handleNext}
-          position="absolute"
-          right="20px"
-          top="50%"
-          transform="translateY(-50%)"
-        />
-        {/* Cards */}
         <Flex>
           {cardsData.slice(currentIndex, currentIndex + cardsPerSlide).map((card, index) => (
             <Box
-              key={index}
               zIndex={1}
+              key={index}
               marginRight="20px" // Add margin between cards
             >
               <ViewCard

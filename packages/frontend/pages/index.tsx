@@ -5,6 +5,7 @@ import React, { useState, useCallback, useEffect } from "react";
 import { useRouter } from "next/router";
 import { usePlaidLink } from "react-plaid-link";
 import PageLayout from "../components/Layout/PageLayout";
+import GradientSpotlight from "../components/GradientSpotlight";
 
 async function fetchTransactions() {
   try {
@@ -84,23 +85,6 @@ export default function PlaidLink() {
               >
                 c
               </Text>
-              <Box
-                as={"button"}
-                color={"white"}
-                fontWeight={"bold"}
-                borderRadius={"12px"}
-                width={"200px"}
-                height={"50px"}
-                bgGradient={"linear(to-l, #5200FF,#FF0080, #FF8A00)"}
-                marginTop={"50px"}
-                _hover={{
-                  transform: "scale(1.01)",
-                  boxShadow: "0 0 4px #FFF",
-                }}
-                onClick={fetchTransactions} // Call the fetchTransactions function when the button is clicked
-              >
-                <Text>Fetch Transactions</Text>
-              </Box>
               <Text
                 fontFamily={"Monoton"}
                 fontWeight={"400"}
@@ -115,7 +99,7 @@ export default function PlaidLink() {
             <VStack align={"left"} paddingLeft={"10"} paddingTop={"40"}>
               <Text
                 fontFamily={"Outfit"}
-                fontWeight={"700"}
+                fontWeight={"600"}
                 fontSize={"100px"}
                 lineHeight={"90%"}
                 textColor={"#FFFFFF"}
@@ -124,7 +108,7 @@ export default function PlaidLink() {
               </Text>
               <Text
                 fontFamily={"Outfit"}
-                fontWeight={"700"}
+                fontWeight={"600"}
                 fontSize={"100px"}
                 lineHeight={"90%"}
                 textColor={"#FFFFFF"}
@@ -137,7 +121,7 @@ export default function PlaidLink() {
                 }
                 bgClip={"text"}
                 fontFamily={"Outfit"}
-                fontWeight={"900"}
+                fontWeight={"600"}
                 fontSize={"100px"}
                 lineHeight={"90%"}
                 paddingBottom={"100px"}
@@ -153,16 +137,43 @@ export default function PlaidLink() {
                 height={"50px"}
                 bgGradient={"linear(to-l, #5200FF,#FF0080, #FF8A00)"}
                 marginTop={"50px"}
+                zIndex={1}
                 _hover={{
                   // make it slightly bigger and glow
-                  transform: "scale(1.01)",
-                  boxShadow: "0 0 4px #FFF",
+                  transform: "scale(1.02)",
                 }}
                 onClick={() => open()}
               >
                 <Text>Start Now</Text>
               </Box>
+              <Box
+                as={"button"}
+                color={"white"}
+                fontWeight={"bold"}
+                borderRadius={"12px"}
+                width={"200px"}
+                height={"50px"}
+                bgGradient={"linear(to-l, #5200FF,#FF0080, #FF8A00)"}
+                marginTop={"50px"}
+                zIndex={1}
+                _hover={{
+                  transform: "scale(1.02)",
+                }}
+                onClick={fetchTransactions} // Call the fetchTransactions function when the button is clicked
+              >
+                <Text>Fetch Transactions</Text>
+              </Box>
             </VStack>
+          </Box>
+          <Box
+            position={"absolute"}
+            top={"40"}
+            left={"-30"}
+            width={"100%"}
+            height={"100%"}
+
+          >
+            <GradientSpotlight />
           </Box>
 
           <Box width={"50%"} height={"100vh"}>
