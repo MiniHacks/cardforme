@@ -10,22 +10,26 @@ def extract_card_info(file_path, link_data):
     card_info_dict = {}
 
     # Use regular expressions to find all card entries in the markdown file
-    card_matches = re.finditer(r'Card:\s+(.*?)\nName in code:\s+(.*?)\s+Benefits:(.*?)\nLink:\s+(.*?)\n---', content, re.DOTALL)
+    card_matches = re.finditer(r'Card:\s+(.*?)\nAnnual Fee:.*?\nName in code:\s+(.*?)\s+Benefits:(.*?)\nLink:\s+(.*?)\n---', content, re.DOTALL)
 
     for match in card_matches:
         card_info = {}
-        card_info["name_in_code"] = match.group(2)
-        benefits = match.group(3).strip().split('\n- ')
+        
+        card_info["card_name"] = match.group(1).strip().replace('<br />', '').replace('<br >', '').replace('\n', ' ')
+        card_info["name_in_code"] = match.group(2).strip().replace('<br />', '').replace('<br >', '').replace('\n', ' ')
+        
+        benefits = match.group(3).strip().replace('<br />', '').replace('<br >', '').replace('\n', ' ').split('- ')
+        benefits = [benefit.strip() for benefit in benefits if benefit.strip()]  # Removing empty entries
         card_info["description"] = benefits
 
-        # Look for a link if available in the markdown file
-        card_link = match.group(4).strip()
+        card_link = match.group(4).strip().replace('<br />', '').replace('<br >', '').replace('\n', ' ')
         card_info["link"] = card_link
-
-        card_name = match.group(1).strip()  # Extract the card name and remove leading/trailing spaces
-        card_info_dict[card_info["name_in_code"]] = card_info
+        
+        card_name = card_info["name_in_code"]
+        card_info_dict[card_name] = card_info
 
     return card_info_dict
+
 
 # Function to process all markdown files and create the JSON data
 def process_markdown_files(file_paths):
