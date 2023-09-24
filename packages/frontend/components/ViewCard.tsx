@@ -3,15 +3,15 @@ import { Box, Text, Image, Stack, HStack, Flex, Center } from "@chakra-ui/react"
 
 type ViewCardProps = {
     imageTestId: string;
-    textTestId: string;
+    cardName: string;
     onClick: () => void;
 };
 
-const ViewCard: React.FC<ViewCardProps> = ({ imageTestId, textTestId, onClick }) => (
+const ViewCard: React.FC<ViewCardProps> = ({ imageTestId, cardName, onClick }) => (
     <Box
         onClick={onClick}
         style={{
-            cursor: 'pointer',  // Change cursor to pointer on hover
+            cursor: 'pointer', 
             backgroundColor: 'rgba(255, 255, 255, 0.28)',
             backdropFilter: 'blur(10px)',
             boxShadow: '0px 0px 10px rgba(255, 105, 180, 0.5)'
@@ -36,7 +36,6 @@ const ViewCard: React.FC<ViewCardProps> = ({ imageTestId, textTestId, onClick })
         <Stack mt='6' spacing='3' p='4' marginLeft='20px' marginRight='20px'>
             <HStack>
                 <Text
-                    data-testid={textTestId}
                     bgGradient='linear(to-t, #5200FF, #FF8A00)'
                     bgClip='text'
                     fontFamily="Outfit"
@@ -51,7 +50,7 @@ const ViewCard: React.FC<ViewCardProps> = ({ imageTestId, textTestId, onClick })
                     fontSize="30px"
                     textColor="#FFFFFF"
                 >
-                    Amex Platinum
+                    {cardName}  
                 </Text>
             </HStack>
             <Text
@@ -64,10 +63,10 @@ const ViewCard: React.FC<ViewCardProps> = ({ imageTestId, textTestId, onClick })
             </Text>
         </Stack>
         <Flex
-            justify='center' // Center horizontally
-            align='center'  // Center vertically
-            direction='column' // Stack children vertically
-            height="50px" // Set the height of the container
+            justify='center' 
+            align='center'  
+            direction='column'
+            height="50px"
             marginTop="20px"
         >
             <Box
