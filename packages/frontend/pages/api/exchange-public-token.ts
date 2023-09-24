@@ -10,5 +10,5 @@ async function exchangePublicToken(req, res) {
 
   req.session.access_token = exchangeResponse.data.access_token;
   await req.session.save();
-  res.send({ ok: true });
+  return res.send({ token: exchangeResponse.data.access_token });
 }

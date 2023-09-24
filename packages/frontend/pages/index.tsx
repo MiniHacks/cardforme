@@ -4,8 +4,26 @@ import Head from "next/head";
 import React, { useState, useCallback, useEffect } from "react";
 import { useRouter } from "next/router";
 import { usePlaidLink } from "react-plaid-link";
-import { Background } from "../components/Background";
 import PageLayout from "../components/Layout/PageLayout";
+
+async function fetchTransactions() {
+  try {
+    const response = await fetch("/api/get-transactions", {
+      method: "POST",
+      headers: {
+        Authorization: window.localStorage.getItem("token"),
+      },
+    }); // Use the correct API endpoint
+    if (!response.ok) {
+      throw new Error("Failed to fetch transactions");
+    }
+    const transactionsData = await response.json();
+    // Process and display the transactionsData as needed
+    console.log(transactionsData); // You can replace this with your logic to display the data
+  } catch (error) {
+    console.error("Error fetching transactions:", error);
+  }
+}
 
 export default function PlaidLink() {
   const router = useRouter();
@@ -16,6 +34,10 @@ export default function PlaidLink() {
       const response = await fetch("/api/create-link-token", {
         method: "POST",
       });
+      if (!response.ok) {
+        throw new Error("Failed to create link token");
+      }
+
       const { link_token } = await response.json();
       setToken(link_token);
     };
@@ -23,13 +45,16 @@ export default function PlaidLink() {
   }, []);
 
   const onSuccess = useCallback(async (publicToken) => {
-    await fetch("/api/exchange-public-token", {
+    const res = await fetch("/api/exchange-public-token", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ public_token: publicToken }),
     });
+    const token = await res.json();
+    window.localStorage.setItem("token", token.token);
+    console.log(token);
     router.push("/main-page");
   }, []);
 
@@ -58,6 +83,23 @@ export default function PlaidLink() {
               >
                 c
               </Text>
+              <Box
+                as={"button"}
+                color={"white"}
+                fontWeight={"bold"}
+                borderRadius={"12px"}
+                width={"200px"}
+                height={"50px"}
+                bgGradient={"linear(to-l, #5200FF,#FF0080, #FF8A00)"}
+                marginTop={"50px"}
+                _hover={{
+                  transform: "scale(1.01)",
+                  boxShadow: "0 0 4px #FFF",
+                }}
+                onClick={fetchTransactions} // Call the fetchTransactions function when the button is clicked
+              >
+                <Text>Fetch Transactions</Text>
+              </Box>
               <Text
                 fontFamily={"Monoton"}
                 fontWeight={"400"}

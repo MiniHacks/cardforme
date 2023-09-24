@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import { Box, Button, Flex, Heading, IconButton, Icon } from "@chakra-ui/react";
 import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
-import ViewCard from "../components/ViewCard";
 import React from "react";
+import ViewCard from "../components/ViewCard";
 
 const Home: NextPage = () => {
   const numViewCards = 5; // Adjust this to the total number of ViewCards
@@ -39,33 +39,33 @@ const Home: NextPage = () => {
       {/* Left Icon */}
       <IconButton
         icon={<Icon as={ArrowLeftIcon} boxSize={4} />}
-        aria-label="Previous"
+        aria-label={"Previous"}
         isDisabled={currentIndex === 0}
         onClick={handlePrevious}
-        position="absolute"
-        left="20px"
-        top="50%"
-        transform="translateY(-50%)"
+        position={"absolute"}
+        left={"20px"}
+        top={"50%"}
+        transform={"translateY(-50%)"}
       />
 
       {/* Right Icon */}
       <IconButton
         icon={<Icon as={ArrowRightIcon} boxSize={4} />}
-        aria-label="Next"
+        aria-label={"Next"}
         isDisabled={isLastPage}
         onClick={handleNext}
-        position="absolute"
-        right="20px"
-        top="50%"
-        transform="translateY(-50%)"
+        position={"absolute"}
+        right={"20px"}
+        top={"50%"}
+        transform={"translateY(-50%)"}
       />
 
       {/* Header */}
-      <Heading as="h1" size="2xl" mb={4}>
+      <Heading as={"h1"} size={"2xl"} mb={4}>
         Your Carousel Header
       </Heading>
 
-      <Flex justifyContent="center" alignItems="center">
+      <Flex justifyContent={"center"} alignItems={"center"}>
         {Array.from({ length: cardsPerSlide }).map((_, index) => (
           <div
             key={currentIndex + index}
