@@ -1,22 +1,27 @@
 ---
 Company: American Express <br />
 Card: American Express Platinum <br />
+card_code_name: amex_platinum <br />
 https://www.americanexpress.com/us/credit-cards/card-application/apply/platinum-card/26129-10-0?pmccode=137&sid=12011830001&intlink=US-Acq-Shop-Consumer-PDP-Platinum-Prospect-Apply-intro#/
 ---
 Company: American Express <br />
 Card: American Express Gold <br />
+card_code_name: amex_gold <br />
 https://www.americanexpress.com/us/credit-cards/card-application/apply/gold-card/26129-10-0?pmccode=784&sid=12011830001&intlink=US-Acq-Shop-Consumer-PDP-GoldCard-Prospect-Apply-bottom#/
 ---
 Company: American Express <br />
 Card: American Express Blue Cash Everyday<br />
+card_code_name: amex_blue_cash_everyday <br />
 https://www.americanexpress.com/us/credit-cards/card-application/apply/blue-cash-everyday-credit-card/26129-10-0?pmccode=795&sid=12011830001&intlink=US-Acq-Shop-Consumer-PDP-BCE-Prospect-Apply-bottom#/
 ---
 Company: American Express <br />
 Card: Blue Cash Preferred Card from American<br />
+card_code_name: amex_blue_cash_preferred <br />
 https://www.americanexpress.com/us/credit-cards/card-application/apply/blue-cash-preferred-credit-card/26129-10-0?pmccode=796&sid=12011830001&intlink=US-Acq-Shop-Consumer-PDP-BCP-Prospect-Apply-bottom#/
 ---
 Company: American Express <br />
 Card: American Express Business Gold Card <br />
+card_code_name: amex_business_gold <br />
 https://www.americanexpress.com/us/credit-cards/card-application/apply/businessgold-card/45094-9-0?intlink=US-Acq-GCP-Open-CardDetail-GoldCard-Apply-Gold#/
 ---
 Company: Bank of America <br />
