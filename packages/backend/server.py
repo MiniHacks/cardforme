@@ -6,14 +6,12 @@ from flask import render_template
 from flask import request
 from flask import jsonify
 from flask_cors import CORS, cross_origin
-from flask_talisman import Talisman
 import card_backtesting
 import transactions
 
 app = Flask(__name__)
 CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
-# talisman = Talisman(app, force_https=True)
 
 @app.route('/')
 @cross_origin()
@@ -78,8 +76,8 @@ def get_transactions():
         res.append((card_backtesting.usaa_rewards_american_express(current_transactions), "usaa_rewards_american_express"))
 
         res.sort(key = lambda x: x[0], reverse=True)
-
-        return [item for item in res[:5]]
+        res = {item[1]: item[0] for item in res[:5]}
+        return jsonify(res)
 
     except Exception as e:
         return jsonify({"error": str(e)}), 400
