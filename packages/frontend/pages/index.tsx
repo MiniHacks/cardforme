@@ -51,7 +51,7 @@ export default function PlaidLink() {
   return (
     <Box backgroundColor={"#06021C"}>
       <PageLayout title={"cardforme"}>
-        <HStack spacing={0} w={"100%"}>
+        <HStack spacing={0} w={"100%"} h={"100%"}>
           <Box width={"50%"} height={"100vh"}>
             <HStack paddingLeft={10} paddingTop={10} spacing={-1.75}>
               <Text
@@ -168,8 +168,8 @@ export default function PlaidLink() {
             <Image
               src={"images/discover_floating.png"}
               position={"absolute"}
-              top={"520"}
-              left={"700"}
+              top={"460"}
+              left={"680"}
               width={"40%"}
               height={"40%"}
             />

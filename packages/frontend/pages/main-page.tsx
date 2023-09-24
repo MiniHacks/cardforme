@@ -6,6 +6,7 @@ import ViewCard from "../components/ViewCard";
 import GradientSpotlight from "../components/GradientSpotlight";
 
 const Home: NextPage = () => {
+<<<<<<< HEAD
   const [transactions, setTransactions] = useState({}); // Replace with the correct type
 
   async function fetchTransactions() {
@@ -80,6 +81,38 @@ const Home: NextPage = () => {
   //   }
   // }
 
+  const [transactions, setTransactions] = useState([]);
+
+  useEffect(() => {
+    async function fetchTransactions() {
+      try {
+        const response = await fetch("/api/get-transactions", {
+          method: "POST",
+          headers: {
+            Authorization: window.localStorage.getItem("token"),
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch transactions");
+        }
+
+        const transactionsData = await response.json();
+        setTransactions(transactionsData);
+      } catch (error) {
+        console.error("Error fetching transactions:", error);
+      }
+    }
+
+    // Fetch transactions when the component mounts
+    fetchTransactions();
+  }, []); // Empty dependency array ensures this runs once when the component mounts
+
+  useEffect(() => {
+    // Log transactions when it changes
+    console.log(transactions);
+  }, [transactions]);
+
   const cardsData = [
     {
       imageSrc: "/images/amex_platinum.png",
@@ -133,7 +166,7 @@ const Home: NextPage = () => {
 
   const pageStyle: React.CSSProperties = {
     backgroundColor: "#06021C",
-    height: "100vh",
+    height: "150vh",
   };
 
   const carouselStyle: React.CSSProperties = {
@@ -157,7 +190,7 @@ const Home: NextPage = () => {
           pt={25}
           pb={15}
         >
-          Customer Favorites
+          Personal Picks
         </Heading>
       </Box>
       <Box style={carouselStyle}>
