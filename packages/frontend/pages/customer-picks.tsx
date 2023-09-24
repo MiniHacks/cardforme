@@ -1,8 +1,8 @@
 // Home.js
 import type { NextPage } from "next";
 import { Box, Flex, Heading } from "@chakra-ui/react";
-import ViewCard from "../components/ViewCard";
 import React from "react";
+import ViewCard from "../components/ViewCard";
 import GradientSpotlight from "../components/GradientSpotlight";
 
 const Home: NextPage = () => {
@@ -31,7 +31,9 @@ const Home: NextPage = () => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + cardsPerSlide) % cardsData.length);
+    setCurrentIndex(
+      (prevIndex) => (prevIndex + cardsPerSlide) % cardsData.length
+    );
   };
 
   const handlePrevious = () => {
@@ -61,36 +63,46 @@ const Home: NextPage = () => {
   return (
     <div style={pageStyle}>
       <Box>
-        <Heading color="#FFFFFF" fontFamily="Outfit" ml={192} pt={25} pb={15} >
+        <Heading
+          color={"#FFFFFF"}
+          fontFamily={"Outfit"}
+          ml={192}
+          pt={25}
+          pb={15}
+        >
           Customer Favorites
         </Heading>
       </Box>
       <Box style={carouselStyle}>
-        <Box position="absolute" left="-80px" top="100px">
+        <Box position={"absolute"} left={"-80px"} top={"100px"}>
           <GradientSpotlight /> {/* Use the GradientSpotlight component */}
         </Box>
-        <Box position="absolute" left="400px" top="0px">
+        <Box position={"absolute"} left={"400px"} top={"0px"}>
           <GradientSpotlight /> {/* Use the GradientSpotlight component */}
         </Box>
-        <Box position="absolute" left="1000px" top="-200px" deg="180px">
+        <Box position={"absolute"} left={"1000px"} top={"-200px"} deg={"180px"}>
           <GradientSpotlight /> {/* Use the GradientSpotlight component */}
         </Box>
         <Flex>
-          {cardsData.slice(currentIndex, currentIndex + cardsPerSlide).map((card, index) => (
-            <Box
-              zIndex={1}
-              key={index}
-              marginRight="20px" // Add margin between cards
-            >
-              <ViewCard
-                imageSrc={card.imageSrc}
-                cardName={card.cardName}
-                cardDescription={card.cardDescription}
-                cardNumber={currentIndex + index + 1}
-                onClick={() => window.open(card.link)}
-              />
-            </Box>
-          ))}
+          {cardsData
+            .slice(currentIndex, currentIndex + cardsPerSlide)
+            .map((card, index) => (
+              <Box
+                zIndex={1}
+                key={index}
+                marginRight={"20px"} // Add margin between cards
+              >
+                <ViewCard
+                  imageSrc={card.imageSrc}
+                  cardName={card.cardName}
+                  cardDescription={card.cardDescription}
+                  cardNumber={currentIndex + index + 1}
+                  onClick={() =>
+                    typeof window !== "undefined" && window.open(card.link)
+                  }
+                />
+              </Box>
+            ))}
         </Flex>
         {/* Add Next and Previous buttons here */}
       </Box>

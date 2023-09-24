@@ -329,6 +329,15 @@
     ],
     "link": "https://www.wellsfargo.com/credit-cards/autograph/"
   },
+  "wells_fargo_active_cash": {
+    "card_name": "Wells Fargo Active Cash℠",
+    "name_in_code": "wells_fargo_active_cash ",
+    "description": [
+      "Earn 1X points on other purchases",
+      "Earn unlimited 3X points on restaurants, travel, gas stations, transit, popular streaming services and phone plans."
+    ],
+    "link": "https://www.wellsfargo.com/credit-cards/autograph/"
+  },
   "wells_fargo_hotels_com_rewards_visa": {
     "card_name": "Hotels.com® Rewards Visa® Credit Card",
     "name_in_code": "wells_fargo_hotels_com_rewards_visa ",

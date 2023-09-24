@@ -77,7 +77,7 @@ def get_transactions():
         res.append((card_backtesting.usaa_rewards_american_express(current_transactions), "usaa_rewards_american_express"))
 
         res.sort(key = lambda x: x[0], reverse=True)
-        return {"cards": res[:5]}
+        return {"cards": res[:9]}
 
     except Exception as e:
         return jsonify({"error": str(e)}), 400
