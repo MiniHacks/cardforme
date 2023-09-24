@@ -57,3 +57,21 @@ def extract_max_values(k):
             break
 
     return max_values
+
+def add_transaction(self, category, amount):
+    if category == "Airlines and Aviation Services":
+        self.flights += amount
+    elif category == "Groceries":
+        self.groceries += amount
+    elif category == "Gas":
+        self.gas += amount
+    elif category == "Restaurants":
+        self.dining += amount
+    elif category == "Entertainment":
+        self.entertainment += amount
+    elif category == "Car Rental":
+        self.car_rental += amount
+    elif category == "Hotel":
+        self.hotel += amount
+    elif category == "Retail":
+        self.retail += amount

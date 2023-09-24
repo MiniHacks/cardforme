@@ -337,7 +337,7 @@ def discover_student_credit_card(card):
     tot += (card.total * 5) / 100
     return tot
 
-Discover It Miles
+# Discover It Miles
 def discover_it_miles(card):
     tot = 0
     tot += (card.flights * 1.5) / 100
@@ -359,22 +359,22 @@ def synchrony_sams_club_mastercard(card):
     return tot
 
 # Synchrony PayPal Cashback Mastercard
-def synchrony_paypal_cashback_mastercard(card):
-    tot = 0
-    if card.digital_wallet:
-        tot += (card.total * 3) / 100
-    else:
-        tot += (card.total * 2) / 100
-    return tot
+# def synchrony_paypal_cashback_mastercard(card):
+#     tot = 0
+#     if card.digital_wallet:
+#         tot += (card.total * 3) / 100
+#     else:
+#         tot += (card.total * 2) / 100
+#     return tot
 
 # Apple Card
-def apple_card(card):
-    tot = 0
-    if card.digital_wallet:
-        tot += (card.total * 2) / 100
-    else:
-        tot += (card.total * 1) / 100
-    return tot
+# def apple_card(card):
+#     tot = 0
+#     if card.digital_wallet:
+#         tot += (card.total * 2) / 100
+#     else:
+#         tot += (card.total * 1) / 100
+#     return tot
 
 # US Bank Cash+ Visa Signature Card
 def us_bank_cash_plus_visa_signature(card):
@@ -448,20 +448,21 @@ def us_bank_cash_plus_visa_signature(card):
 
 # U.S. Bank Altitude® Reserve Visa Infinite® Card
 
-def us_bank_altitude_reserve_visa_infinite(card):
-     tot_points = 0
-     tot_dollar_value = 0
-    if card.digital_wallet:
-        tot_points += card.hotels * 3
-        tot_points += card.car_rental * 3
-    else:
-        tot_points += card.hotel * 5 # Assuming 1x points for these categories
-        tot_points += card.car_rental * 5    
-    tot_dollar_value += tot_points / 5  # Convert points to dollar value
-    tot_dollar_value = min(tot_dollar_value, 325)  # Ensure the reward does not exceed $325
-    tot_dollar_value += card.total
-    tot_dollar_value -= 400  # Deducting the annual fee (or whatever this value represents)
-    return tot_dollar_value
+# def us_bank_altitude_reserve_visa_infinite(card):
+#      tot_points = 0
+#      tot_dollar_value = 0
+#     if card.digital_wallet:
+#         tot_points += card.hotels * 3
+#         tot_points += card.car_rental * 3
+#     else:
+#         tot_points += card.hotel * 5 # Assuming 1x points for these categories
+#         tot_points += card.car_rental * 5
+#     tot_dollar_value += tot_points / 5  # Convert points to dollar value
+#     tot_dollar_value = min(tot_dollar_value, 325)  # Ensure the reward does not exceed $325
+#     tot_dollar_value += card.total
+#     tot_dollar_value -= 400  # Deducting the annual fee (or whatever this value represents)
+#     return tot_dollar_value
+
 #U.S. Bank Business Cash Rewards World Elite™ Mastercard® review 
 def us_bank_business_cash_rewards_world_elite_mastercard(card):
     tot = 0

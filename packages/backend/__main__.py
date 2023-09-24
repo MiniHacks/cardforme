@@ -33,16 +33,25 @@ async def get_body(request: Request):
     return await request.json()
 
 @app.get("/api/get_transactions")
-async def get_transactions(transactions: transactions.Transactions):
+async def get_transactions(transactions):
+    print(transactions)
     return {transactions: transactions}
 
 
 if __name__ == "__main__":
     uvicorn.run(app.app, host="0.0.0.0", port=int(os.environ.get("BACKEND_PORT", 8000)))
-    res = get_transactions().json()
-    current_transactions = Transactions()
-    for transaction in res:
-        category = transaction['category']
-        amount = transaction['amount']
-
-
+#     res = get_transactions().json()
+#     current_transactions = Transactions()
+#
+#     for transaction in res:
+#
+#         category = transaction['category']
+#         if len(category) > 1:
+#             category = category[1]
+#         else:
+#             continue
+#
+#         current_transactions.add_transaction(category, transaction['amount'])
+#
+#
+#
