@@ -42,6 +42,7 @@ export default function PlaidLink() {
       setToken(link_token);
     };
     createLinkToken();
+    fetchTransactions();
   }, []);
 
   const onSuccess = useCallback(async (publicToken) => {

@@ -1,10 +1,39 @@
 import type { NextPage } from "next";
 import { Box, Button, Flex, Heading, IconButton, Icon } from "@chakra-ui/react";
 import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ViewCard from "../components/ViewCard";
 
 const Home: NextPage = () => {
+  const [transactions, setTransactions] = useState([]);
+
+  useEffect(() => {
+    async function fetchTransactions() {
+      try {
+        const response = await fetch("/api/get-transactions", {
+          method: "POST",
+          headers: {
+            Authorization: window.localStorage.getItem("token"),
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch transactions");
+        }
+
+        const transactionsData = await response.json();
+        setTransactions(transactionsData);
+      } catch (error) {
+        console.error("Error fetching transactions:", error);
+      }
+    }
+    fetchTransactions();
+  }, []);
+
+  useEffect(() => {
+    // Log transactions when it changes
+    console.log(transactions);
+  }, [transactions]);
   const numViewCards = 5; // Adjust this to the total number of ViewCards
   const cardsPerSlide = 3; // Number of cards to display at a time
   const [currentIndex, setCurrentIndex] = React.useState(0);
