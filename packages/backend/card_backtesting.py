@@ -4,18 +4,18 @@ import transactions
 def amex_platinum(card):
     tot = 0
     tot += (card.flights * 5) / 100
-    tot += (card.hotels * 5) / 100
-    tot += (card.total - card.hotels - card.flights) / 100
+    tot += (card.hotel * 5) / 100
+    tot += (card.total - card.hotel - card.flights) / 100
     tot -= 695
     return tot
 
 # American Express Gold
 def amex_gold(card):
     tot = 0
-    tot += (card.restaurants * 4) / 100
+    tot += (card.dining * 4) / 100
     tot += (card.groceries * 4) / 100
     tot += (card.flights * 3) / 100
-    tot += (card.total - card.restaurants - card.groceries - card.flights) / 100
+    tot += (card.total - card.dining - card.groceries - card.flights) / 100
     tot -= 250
     return tot
 
@@ -32,7 +32,7 @@ def amex_blue_cash_everyday(card):
     else:
         tot += (card.gas * 3) / 100
 
-    if self.retail > 6000:
+    if card.retail > 6000:
         tot += (6000 * 3) / 100 + ((card.retail - 6000) * 1) / 100
     else:
         tot += (card.retail * 3) / 100
@@ -57,7 +57,7 @@ def amex_blue_cash_preferred(card): #SUS CARD
     else:
         tot += (card.gas * 3) / 100
 
-    tot += (card.total - card.groceries - card.entertainment - card.gas - card.transit) / 100
+    tot += (card.total - card.groceries - card.entertainment - card.gas - card.car_rental) / 100
 
     tot -= 95
     return tot
@@ -66,42 +66,42 @@ def amex_blue_cash_preferred(card): #SUS CARD
 def amex_business_gold(card):
     v1, v2 = card.extract_max_values(2)
     tot = 0
-    if v1[1] == "Flights" or v2[1] == "Flights":
+    if v1 == "Flights" or v2 == "Flights":
         tot += (card.flights * 4) / 100
     else:
         tot += (card.flights * 1) / 100
 
-    if v1[1] == "Restaurants" or v2[1] == "Restaurants":
-        tot += (card.restaurants * 4) / 100
+    if v1 == "dining" or v2 == "dining":
+        tot += (card.dining * 4) / 100
     else:
-        tot += (card.restaurants * 1) / 100
+        tot += (card.dining * 1) / 100
 
-    if v1[1] == "Gas" or v2[1] == "Gas":
+    if v1 == "Gas" or v2 == "Gas":
         tot += (card.gas * 4) / 100
     else:
         tot += (card.gas * 1) / 100
 
-    if v1[1] == "Groceries" or v2[1] == "Groceries":
+    if v1 == "Groceries" or v2 == "Groceries":
         tot += (card.groceries * 4) / 100
     else:
         tot += (card.groceries * 1) / 100
 
-    if v1[1] == "Entertainment" or v2[1] == "Entertainment":
+    if v1 == "Entertainment" or v2 == "Entertainment":
         tot += (card.entertainment * 4) / 100
     else:
         tot += (card.entertainment * 1) / 100
 
-    if v1[1] == "Car Rental" or v2[1] == "Car Rental":
+    if v1 == "Car Rental" or v2 == "Car Rental":
         tot += (card.car_rental * 4) / 100
     else:
         tot += (card.car_rental * 1) / 100
 
-    if v1[1] == "Hotel" or v2[1] == "Hotel":
+    if v1 == "Hotel" or v2 == "Hotel":
         tot += (card.hotel * 4) / 100
     else:
         tot += (card.hotel * 1) / 100
 
-    if v1[1] == "Retail" or v2[1] == "Retail":
+    if v1 == "Retail" or v2 == "Retail":
         tot += (card.retail * 4) / 100
     else:
         tot += (card.retail * 1) / 100
@@ -132,64 +132,64 @@ def bofa_unlimited_rewards(card):
 # Barclays Advantage Aviator Red World Elite Mastercard
 def barclays_aviator_red_world_elite_mastercard(card):
     tot = 0
-    tot += (card.airlines * 2) / 100 # assuming airlines = eligible American Airlines purchases
-    tot += (card.total - card.airlines) / 100
+    tot += (card.flights * 2) / 100 # assuming airlines = eligible American Airlines purchases
+    tot += (card.total - card.flights) / 100
     tot -= 99
     return tot
 
 # Barclays The Hawaiian Airlines World Elite Mastercard
 def barclays_the_hawaiian_airlines_world_elite_mastercard(card):
     tot = 0
-    tot += (card.airlines * 3) / 100 # assuming airlines = eligible Hawaiian Airlines purchases
+    tot += (card.flights * 3) / 100 # assuming airlines = eligible Hawaiian Airlines purchases
     tot += (card.groceries * 2) / 100 # assuming groceries = grocery store (excluding Target and Walmart purchases)
     tot += (card.gas * 2) / 100
     tot += (card.dining * 2) / 100
-    tot += (card.total - card.airlines - card.groceries - card.gas - card.dining) / 100
+    tot += (card.total - card.flights - card.groceries - card.gas - card.dining) / 100
     tot -= 99
     return tot
 
 # Barclays JetBlue Card
 def barclays_jetblue(card):
     tot = 0
-    tot += (card.airlines * 3) / 100 # assuming airlines = eligible JetBlue purchases
-    tot += (card.restaurants * 2) / 100
+    tot += (card.flights * 3) / 100 # assuming airlines = eligible JetBlue purchases
+    tot += (card.dining * 2) / 100
     tot += (card.groceries * 2) / 100
-    tot += (card.total - card.airlines - card.restaurants - card.groceries) / 100
+    tot += (card.total - card.flights - card.dining - card.groceries) / 100
     return tot
 
 # Capital One Quicksilver Cash Rewards Credit Card
 def capital_one_quicksilver_cash_rewards(card):
     tot = 0
-    tot += (card.hotels * 5) / 100 # assuming hotels = hotels booked through Capital One Travel
-    tot += (card.rental_cars * 5) / 100 # assuming rental_cars = rental cars booked through Capital One Travel
-    tot += (card.total - card.hotels - card.rental_cars) * 1.5 / 100
+    tot += (card.hotel * 5) / 100 # assuming hotel = hotel booked through Capital One Travel
+    tot += (card.car_rental * 5) / 100 # assuming rental_cars = rental cars booked through Capital One Travel
+    tot += (card.total - card.hotel - card.car_rental) * 1.5 / 100
     return tot
 
 # Capital One Venture Rewards Credit Card
 def capital_one_venture_rewards(card):
     tot = 0
-    tot += (card.hotels * 5) / 100 # assuming hotels = hotels booked through Capital One Travel
-    tot += (card.rental_cars * 5) / 100 # assuming rental_cars = rental cars booked through Capital One Travel
-    tot += (card.total - card.hotels - card.rental_cars) * 2 / 100
+    tot += (card.hotel * 5) / 100 # assuming hotel = hotel booked through Capital One Travel
+    tot += (card.car_rental * 5) / 100 # assuming rental_cars = rental cars booked through Capital One Travel
+    tot += (card.total - card.hotel - card.car_rental) * 2 / 100
     tot -= 95
     return tot
 
 # Capital One Venture X Rewards Credit Card
 def capital_one_venture_x_rewards(card):
     tot = 0
-    tot += (card.hotels * 10) / 100 # assuming hotels = hotels booked through Capital One Travel
-    tot += (card.rental_cars * 10) / 100 # assuming rental_cars = rental cars booked through Capital One Travel
+    tot += (card.hotel * 10) / 100 # assuming hotel = hotel booked through Capital One Travel
+    tot += (card.car_rental * 10) / 100 # assuming rental_cars = rental cars booked through Capital One Travel
     tot += (card.flights * 5) / 100 # assuming flights = flights booked through Capital One Travel
-    tot += (card.total - card.hotels - card.rental_cars - card.flights) * 2 / 100
+    tot += (card.total - card.hotel - card.car_rental - card.flights) * 2 / 100
     tot -= 395
     return tot
 
 # Capital One Spark Miles for Business
 def capital_one_spark_miles_for_business(card):
     tot = 0
-    tot += (card.hotels * 5) / 100 # assuming hotels = hotels booked through Capital One Travel
-    tot += (card.rental_cars * 5) / 100 # assuming rental_cars = rental cars booked through Capital One Travel
-    tot += (card.total - card.hotels - card.rental_cars) * 2 / 100
+    tot += (card.hotel * 5) / 100 # assuming hotel = hotel booked through Capital One Travel
+    tot += (card.car_rental * 5) / 100 # assuming rental_cars = rental cars booked through Capital One Travel
+    tot += (card.total - card.hotel - card.car_rental) * 2 / 100
     tot -= 95
     return tot
 
@@ -222,7 +222,7 @@ def chase_ink_business_unlimited(card):
 def citi_custom_cash(card):
     tot = 0
     v1 = card.extract_max_values(1)
-    if v1[1] == "Flights":
+    if v1 == "Flights":
         if card.flights > 500:
             tot += (500 * 5) / 100 + ((card.flights - 500) * 1) / 100
         else:
@@ -230,7 +230,7 @@ def citi_custom_cash(card):
     else:
         tot += (card.flights * 1) / 100
 
-    if v1[1] == "Groceries":
+    if v1 == "Groceries":
         if card.groceries > 500:
             tot += (500 * 5) / 100 + ((card.groceries - 500) * 1) / 100
         else:
@@ -238,7 +238,7 @@ def citi_custom_cash(card):
     else:
         tot += (card.groceries * 1) / 100
 
-    if v1[1] == "Gas":
+    if v1 == "Gas":
         if card.gas > 500:
             tot += (500 * 5) / 100 + ((card.gas - 500) * 1) / 100
         else:
@@ -246,19 +246,19 @@ def citi_custom_cash(card):
     else:
         tot += (card.gas * 1) / 100
 
-    if v1[1] == "Dining":
+    if v1 == "Dining":
         if card.dining > 500:
             tot += (500 * 5) / 100 + ((card.dining - 500) * 1) / 100
         else:
             tot += (card.dining * 5) / 100
     else:
         tot += (card.dining * 1) / 100
-    if v1[1] == "Entertainment":
+    if v1 == "Entertainment":
         if card.entertainment > 500:
             tot += (500 * 5) / 100 + ((card.entertainment - 500) * 1) / 100
         else:
             tot += (card.entertainment * 5) / 100
-    if v1[1] == "Car Rental":
+    if v1 == "Car Rental":
         if card.car_rental > 500:
             tot += (500 * 5) / 100 + ((card.car_rental - 500) * 1) / 100
         else:
@@ -266,14 +266,14 @@ def citi_custom_cash(card):
     else:
         tot += (card.car_rental * 1) / 100
 
-    if v1[1] == "Hotel":
+    if v1 == "Hotel":
         if card.hotel > 500:
             tot += (500 * 5) / 100 + ((card.hotel - 500) * 1) / 100
         else:
             tot += (card.hotel * 5) / 100
     else:
         tot += (card.hotel * 1) / 100
-    if v1[1] == "Retail":
+    if v1 == "Retail":
         if card.retail > 500:
             tot += (500 * 5) / 100 + ((card.retail - 500) * 1) / 100
         else:
@@ -334,21 +334,21 @@ def discover_it_balance_transfer(card):
 
 def discover_student_credit_card(card):
     tot = 0
-    tot += (card.total * 5) / 100
+    tot += (card.total * 5) / 100 #fix later lol
     return tot
 
 # Discover It Miles
 def discover_it_miles(card):
     tot = 0
-    tot += (card.flights * 1.5) / 100
+    tot += (card.total * 1.5) / 100
     return tot
 
 # Discover It Chrome
 def discover_it_chrome(card):
     tot = 0
     tot += (card.gas * 2) / 100
-    tot += (card.restaurants * 2) / 100
-    tot += (card.total - card.gas - card.restaurants) / 100
+    tot += (card.dining * 2) / 100
+    tot += (card.total - card.gas - card.dining) / 100
     return tot
 
 # Synchrony Sam's Club Mastercard
@@ -380,7 +380,7 @@ def synchrony_sams_club_mastercard(card):
 def us_bank_cash_plus_visa_signature(card):
     v1, v2 = card.extract_max_values(2)
     tot = 0
-    if v1[1] == "Flights" or v2[1] == "Flights":
+    if v1 == "Flights" or v2 == "Flights":
         if card.flights > 2000:
             tot += (2000 * 5) / 100 + ((card.flights - 2000) * 1) / 100
         else:
@@ -388,7 +388,7 @@ def us_bank_cash_plus_visa_signature(card):
     else:
         tot += (card.flights * 1) / 100
 
-    if v1[1] == "Groceries" or v2[1] == "Groceries":
+    if v1 == "Groceries" or v2 == "Groceries":
         if card.groceries > 2000:
             tot += (2000 * 5) / 100 + ((card.groceries - 2000) * 1) / 100
         else:
@@ -396,7 +396,7 @@ def us_bank_cash_plus_visa_signature(card):
     else:
         tot += (card.groceries * 2) / 100
 
-    if v1[1] == "Gas" or v2[1] == "Gas":
+    if v1 == "Gas" or v2 == "Gas":
         if card.gas > 2000:
             tot += (2000 * 5) / 100 + ((card.gas - 2000) * 1) / 100
         else:
@@ -404,7 +404,7 @@ def us_bank_cash_plus_visa_signature(card):
     else:
         tot += (card.gas * 2) / 100
 
-    if v1[1] == "Dining" or v2[1] == "Dining":
+    if v1 == "Dining" or v2 == "Dining":
         if card.dining > 2000:
             tot += (2000 * 5) / 100 + ((card.dining - 2000) * 1) / 100
         else:
@@ -412,7 +412,7 @@ def us_bank_cash_plus_visa_signature(card):
     else:
         tot += (card.dining * 2) / 100
 
-    if v1[1] == "Entertainment" or v2[1] == "Entertainment":
+    if v1 == "Entertainment" or v2 == "Entertainment":
         if card.entertainment > 2000:
             tot += (2000 * 5) / 100 + ((card.entertainment - 2000) * 1) / 100
         else:
@@ -420,7 +420,7 @@ def us_bank_cash_plus_visa_signature(card):
     else:
         tot += (card.entertainment * 1) / 100
 
-    if v1[1] == "Car Rental" or v2[1] == "Car Rental":
+    if v1 == "Car Rental" or v2 == "Car Rental":
         if card.car_rental > 2000:
             tot += (2000 * 5) / 100 + ((card.car_rental - 2000) * 1) / 100
         else:
@@ -428,7 +428,7 @@ def us_bank_cash_plus_visa_signature(card):
     else:
         tot += (card.car_rental * 1) / 100
 
-    if v1[1] == "Hotel" or v2[1] == "Hotel":
+    if v1 == "Hotel" or v2 == "Hotel":
         if card.hotel > 2000:
             tot += (2000 * 5) / 100 + ((card.hotel - 2000) * 1) / 100
         else:
@@ -436,7 +436,7 @@ def us_bank_cash_plus_visa_signature(card):
     else:
         tot += (card.hotel * 1) / 100
 
-    if v1[1] == "Retail" or v2[1] == "Retail":
+    if v1 == "Retail" or v2 == "Retail":
         if card.retail > 2000:
             tot += (2000 * 5) / 100 + ((card.retail - 2000) * 1) / 100
         else:
@@ -452,7 +452,7 @@ def us_bank_cash_plus_visa_signature(card):
 #      tot_points = 0
 #      tot_dollar_value = 0
 #     if card.digital_wallet:
-#         tot_points += card.hotels * 3
+#         tot_points += card.hotel * 3
 #         tot_points += card.car_rental * 3
 #     else:
 #         tot_points += card.hotel * 5 # Assuming 1x points for these categories
@@ -480,20 +480,19 @@ def wells_fargo_active_cash(card):
 def wells_fargo_autograph(card):
     tot_points = 0
     tot = 0
-    tot += (card.total * (.2)) /100 
     if card.dining:
-        tot_points += card.restaurants * 3
+        tot_points += card.dining * 3
     if card.gas:
         tot_points += card.flights * 3
     if card.groceries:      
         tot_points += card.gas * 3
     if card.entertainment:    
         tot_points += card.entertainment * 3
-    tot += tot_points / 5
+    tot += tot_points / 100
     return tot
 
-# Hotels.com® Rewards Visa® Credit 
-# def wells_fargo_hotels_com_rewards_visa(card):
+# hotel.com® Rewards Visa® Credit 
+# def wells_fargo_hotel_com_rewards_visa(card):
 
 # USAA Cashback Rewards Plus American Express Card
 def usaa_cashback_rewards_plus_american_express(card):
@@ -512,17 +511,16 @@ def usaa_preferred_cash_rewards_visa_signature(card):
 def usaa_rewards_american_express(card):
     tot_points = 0
     tot = 0
-    tot += (card.total * (.2)) /100 
-    if card.restaurants:
-        tot_points += card.restaurants * 3
+    if card.dining:
+        tot_points += card.dining * 3
     if card.gas:
-        tot_points += card.flights * 3
+        tot_points += card.flights * 2
     if card.groceries:      
-        tot_points += card.gas * 3
-    if card.dining:    
-        tot_points += card.hotel * 3
+        tot_points += card.gas * 2
+    if card.hotel:
+        tot_points += card.hotel * 2
     if card.entertainment:    
         tot_points += card.entertainment * 3
-    tot += tot_points / 5
+    tot += tot_points / 100
     return tot
 

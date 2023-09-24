@@ -1,0 +1,379 @@
+{
+  "amex_platinum": {
+    "card_name": "American Express Platinum ",
+    "name_in_code": "amex_platinum ",
+    "description": [
+      "5x Points on flights",
+      "5x Points on prepaid hotels on AmexTravel.com",
+      "1x Points on everything else"
+    ],
+    "link": "https://www.americanexpress.com/us/credit-cards/card-application/apply/platinum-card/26129-10-0?pmccode=137&sid=12011830001&intlink=US-Acq-Shop-Consumer-PDP-Platinum-Prospect-Apply-intro#/"
+  },
+  "amex_gold": {
+    "card_name": "American Express Gold",
+    "name_in_code": "amex_gold",
+    "description": [
+      "4x Points on restaurants and groceries",
+      "3x Points on flights",
+      "1x Points on everything else"
+    ],
+    "link": "https://www.americanexpress.com/us/credit-cards/card-application/apply/gold-card/26129-10-0?pmccode=784&sid=12011820004&intlink=US-Acq-Shop-Consumer-PDP-GoldCard-Prospect-Apply-siderail#/"
+  },
+  "amex_blue_cash_everyday": {
+    "card_name": "American Express Blue Cash Everyday Card from American Express",
+    "name_in_code": "amex_blue_cash_everyday",
+    "description": [
+      "3% Cash Back at grocery, and gas up to $6,000 per year, then 1%.",
+      "3% Cash Back on online retail purchases up to $6,000 per year, then 1%.",
+      "1% Cash Back on other purchases."
+    ],
+    "link": "https://www.americanexpress.com/us/credit-cards/card-application/apply/blue-cash-everyday-credit-card/26129-10-0?pmccode=137&sid=12011830001&intlink=US-Acq-Shop-Consumer-PDP-BlueCashEveryday-Prospect-Apply-intro#/"
+  },
+  "amex_blue_cash_preferred": {
+    "card_name": "Blue Cash Preferred Card from American Express ",
+    "name_in_code": "amex_blue_cash_preferred ",
+    "description": [
+      "6% Cash Back grocery, gas on up to $6,000 per year in purchases (then 1%).",
+      "6% Cash Back on select entertainment.",
+      "1% Cash Back on other purchases"
+    ],
+    "link": "https://www.americanexpress.com/us/credit-cards/card-application/apply/blue-cash-preferred-credit-card/26129-10-0?pmccode=137&sid=12011830001&intlink=US-Acq-Shop-Consumer-PDP-BlueCashPreferred-Prospect-Apply-intro#/"
+  },
+  "amex_business_gold": {
+    "card_name": "American Express Business Gold Card ",
+    "name_in_code": "amex_business_gold ",
+    "description": [
+      "4X points on the 2 categories business spent the most each month upwards of $150,000 yearly.",
+      "1X is earned for other purchases."
+    ],
+    "link": "https://www.americanexpress.com/us/credit-cards/card-application/apply/gold-card/26129-10-0?pmccode=784&sid=12011830001&intlink=US-Acq-Shop-Consumer-PDP-GoldCard-Prospect-Apply-bottom#/"
+  },
+  "bofa_travel_rewards": {
+    "card_name": "Bank of America Travel Rewards credit card ",
+    "name_in_code": "bofa_travel_rewards ",
+    "description": [
+      "1.5 points per $1 spent on all purchases."
+    ],
+    "link": "https://www.bankofamerica.com/credit-cards/products/travel-rewards-credit-card/"
+  },
+  "bofa_premium_rewards": {
+    "card_name": "Bank of America Premium Rewards credit card ",
+    "name_in_code": "bofa_premium_rewards ",
+    "description": [
+      "2 points for every $1 spent on travel and dining",
+      "1.5 points for every $1 spent on all other"
+    ],
+    "link": "https://www.bankofamerica.com/credit-cards/products/premium-rewards-credit-card/"
+  },
+  "bofa_unlimited_rewards": {
+    "card_name": "Bank of America Unlimited Cash Rewards credit card ",
+    "name_in_code": "bofa_unlimited_rewards ",
+    "description": [
+      "1.5% cash back on all purchases."
+    ],
+    "link": "https://www.bankofamerica.com/credit-cards/products/unlimited-cash-rewards-credit-card/"
+  },
+  "barclays_aviator_red_world_elite_mastercard": {
+    "card_name": "AAdvantage Aviator Red World Elite Mastercard ",
+    "name_in_code": "barclays_aviator_red_world_elite_mastercard",
+    "description": [
+      "2X miles per dollar spent on eligible American Airlines purchases",
+      "1X miles on all other purchases"
+    ],
+    "link": "https://cards.barclaycardus.com/banking/cards/aadvantage-aviator-red-world-elite-mastercard/"
+  },
+  "barclays_the_hawaiian_airlines_world_elite_mastercard": {
+    "card_name": "The Hawaiian Airlines World Elite Mastercard ",
+    "name_in_code": "barclays_the_hawaiian_airlines_world_elite_mastercard ",
+    "description": [
+      "3X miles per $1 on eligible Hawaiian Airlines(flight)",
+      "2X miles per $1 on grocery, gas and dining transactions;",
+      "1X mile per $1 on all other transactions."
+    ],
+    "link": "https://cards.barclaycardus.com/banking/cards/hawaiian-airlines-world-elite-mastercard/"
+  },
+  "barclays_jetblue": {
+    "card_name": "JetBlue Card ",
+    "name_in_code": "barclays_jetblue ",
+    "description": [
+      "3X points JetBlue purchases(flight)",
+      "2X points at restaurants and grocery stores",
+      "1X points on all other purchases"
+    ],
+    "link": "https://cards.barclaycardus.com/banking/cards/jetblue-card/"
+  },
+  "captial_one_quicksilver_cash_rewards": {
+    "card_name": "Capital One Quicksilver Cash Rewards Credit Card ",
+    "name_in_code": "captial_one_quicksilver_cash_rewards ",
+    "description": [
+      "5% cash back on hotels and rental cars",
+      "1.5% cash back on every purchase"
+    ],
+    "link": "https://www.capitalone.com/credit-cards/quicksilver/"
+  },
+  "captial_one_venture_rewards": {
+    "card_name": "Capital One Venture Rewards Credit Card ",
+    "name_in_code": "captial_one_venture_rewards ",
+    "description": [
+      "5 Miles per dollar on hotels and rental cars booked through Capital One Travel",
+      "2 Miles per dollar on every purchase, every day"
+    ],
+    "link": "https://www.capitalone.com/credit-cards/venture/"
+  },
+  "captial_one_ventureone_rewards": {
+    "card_name": "Capital One VentureOne Rewards Credit Card ",
+    "name_in_code": "captial_one_ventureone_rewards ",
+    "description": [
+      "5 Miles per dollar on hotels and rental cars booked through Capital One Travel",
+      "1.25 Miles per dollar on every purchase, every day"
+    ],
+    "link": "https://www.capitalone.com/credit-cards/ventureone/"
+  },
+  "captial_one_venture_x_rewards": {
+    "card_name": "Capital One Venture X Rewards Credit Card ",
+    "name_in_code": "captial_one_venture_x_rewards ",
+    "description": [
+      "10 Miles per dollar on hotels and rental cars",
+      "5 Miles per dollar on flights",
+      "2 Miles per dollar on every purchase"
+    ],
+    "link": "https://www.capitalone.com/credit-cards/venture-x/"
+  },
+  "captial_one_spark_miles_for_business": {
+    "card_name": "Capital One Spark Miles for Business ",
+    "name_in_code": "captial_one_spark_miles_for_business ",
+    "description": [
+      "5X miles on hotels and rental cars",
+      "2X miles per dollar on every purchase"
+    ],
+    "link": "https://www.capitalone.com/small-business/credit-cards/spark-miles/"
+  },
+  "chase_sapphire_preferred": {
+    "card_name": "Chase Sapphire Preferred Card ",
+    "name_in_code": "chase_sapphire_preferred ",
+    "description": [
+      "5x points on travel purchased through Chase Ultimate Rewards®",
+      "3x on dining",
+      "2x on all other travel purchases"
+    ],
+    "link": "https://creditcards.chase.com/rewards-credit-cards/chase-sapphire-preferred"
+  },
+  "chase_sapphire_reserve": {
+    "card_name": "Chase Sapphire Reserve® ",
+    "name_in_code": "chase_sapphire_reserve ",
+    "description": [
+      "1 point per $1 spent on all other purchases",
+      "3x points on other travel and dining.",
+      "10x total points on hotels and car rentals"
+    ],
+    "link": "https://creditcards.chase.com/rewards-credit-cards/chase-sapphire-reserve"
+  },
+  "chase_ink_business_unlimited": {
+    "card_name": "Ink Business Unlimited® Credit Card ",
+    "name_in_code": "chase_ink_business_unlimited ",
+    "description": [
+      "-1.5% cash back on every purchase made for your business"
+    ],
+    "link": "https://creditcards.chase.com/business-credit-cards/ink/unlimited"
+  },
+  "citi_custom_cash": {
+    "card_name": "Citi Custom Cash® Card ",
+    "name_in_code": "citi_custom_cash ",
+    "description": [
+      "5% cash back on purchases in your top eligible spend category each billing cycle, up to the first $500 spent",
+      "Earn unlimited 1% cash back on all other purchases."
+    ],
+    "link": "https://www.citi.com/credit-cards/citi-custom-cash-credit-card"
+  },
+  "citi_double_cash": {
+    "card_name": "Citi Double Cash Card ",
+    "name_in_code": "citi_double_cash ",
+    "description": [
+      "-2% cash back on all purchases"
+    ],
+    "link": "https://www.citi.com/credit-cards/citi-double-cash-credit-card"
+  },
+  "citi_premier": {
+    "card_name": "Citi Premier Card ",
+    "name_in_code": "citi_premier ",
+    "description": [
+      "3X Points per $1 on restaurant, grocery, gas station, hotel and flight",
+      "1X Points on all other purchases."
+    ],
+    "link": "https://www.citi.com/credit-cards/citi-premier-credit-card"
+  },
+  "citi_rewards": {
+    "card_name": "Citi Rewards+ Card ",
+    "name_in_code": "citi_rewards ",
+    "description": [
+      "2X ThankYou® Points at supermarkets and gas stations for the first $6,000/year",
+      "1 point per $1, works for all other purchases",
+      "1 point on all other purchases"
+    ],
+    "link": "https://www.citi.com/credit-cards/citi-rewards-plus-credit-card"
+  },
+  "citi_aadvantage_platinum_select": {
+    "card_name": "Citi® / AAdvantage® Platinum Select® World Elite Mastercard® ",
+    "name_in_code": "citi_aadvantage_platinum_select ",
+    "description": [
+      "2 AAdvantage® miles for every $1 spent at gas stations, restaurants and on eligible American Airlines purchases"
+    ],
+    "link": "https://www.citi.com/credit-cards/citi-aadvantage-platinum-credit-card"
+  },
+  "discover_it_cash_back": {
+    "card_name": "Discover it® Cash Back ",
+    "name_in_code": "discover_it_cash_back ",
+    "description": [
+      "5% cash back on everyday purchases at different places each quarter like grocery stores, dinning, and gas stations, up to the quarterly maximum when you activate.",
+      "Plus, earn unlimited 1% cash back on all other purchases  automatically."
+    ],
+    "link": "https://www.discover.com/credit-cards/cash-back/it-card.html"
+  },
+  "discover_student_credit_card": {
+    "card_name": "Discover Student",
+    "name_in_code": "discover_student_credit_card",
+    "description": [
+      "Students earn 5% cash back on everyday purchases during the school year (and all year long) at different places each quarter."
+    ],
+    "link": "https://www.discover.com/credit-cards/student/"
+  },
+  "discover_it_balance_transfer": {
+    "card_name": "Discover it® Balance Transfer ",
+    "name_in_code": "discover_it_balance_transfer ",
+    "description": [
+      "5% cash back on everyday like  grocery stores, restaurants, and gas stations, up to the quarterly maximum when you activate.",
+      "Earn unlimited 1% cash back on all other purchases",
+      "automatically."
+    ],
+    "link": "https://www.discover.com/credit-cards/balance-transfer/"
+  },
+  "discover_it_miles": {
+    "card_name": "Discover it® Miles ",
+    "name_in_code": "discover_it_miles ",
+    "description": [
+      "Automatically earn unlimited 1.5x Miles on every dollar of every purchase",
+      "with no annual fee."
+    ],
+    "link": "https://www.discover.com/credit-cards/travel/"
+  },
+  "discover_it_chrome": {
+    "card_name": "Discover it® Chrome ",
+    "name_in_code": "discover_it_chrome ",
+    "description": [
+      "1% cash back on all other purchases",
+      "automatically.",
+      "2% cash back at Gas Stations and Restaurants on up to $1,000"
+    ],
+    "link": "https://www.discover.com/credit-cards/cash-back/it-chrome.html"
+  },
+  "synchrony_sams_club_mastercard": {
+    "card_name": "Sam's Club® Mastercard®",
+    "name_in_code": "synchrony_sams_club_mastercard ",
+    "description": [
+      "5 percent cash back on gas (on up to $6,000 in yearly purchases, then 1 percent)  -Your first $30 of Sam’s Club purchases within 30 days are covered with a matching statement credit -Serves as both a credit card and your Sam’s Club membership card(monthly payment can be calculated for, very spec) -->  <!-",
+      "Link: https://www.samsclub.com/content/credit --> <!-",
+      "--",
+      "--> Company: Synchrony  Card:PayPal Cashback Mastercard Annual Fee: 0  Name in code: synchrony_paypal_cashback_mastercard  Benefits:",
+      "2 percent cash back on all purchases"
+    ],
+    "link": "https://www.paypal.com/us/webapps/mpp/credit-card"
+  },
+  "us_bank_visa_platinum": {
+    "card_name": "U.S. Bank Visa® Platinum Card",
+    "name_in_code": "us_bank_visa_platinum ",
+    "description": [
+      "cellphone protection when you pay your monthly phone bil (up to two $600 claims per 12-month period, $25 deductible)."
+    ],
+    "link": "https://www.usbank.com/credit-cards/platinum-visa-credit-card.html"
+  },
+  "us_bank_cash_plus_visa_signature": {
+    "card_name": "U.S. Bank Cash+® Visa Signature® Card",
+    "name_in_code": "us_bank_cash_plus_visa_signature ",
+    "description": [
+      "You won’t have to pay an annual fee for this card."
+    ],
+    "link": "https://www.usbank.com/credit-cards/cash-plus-signature.html"
+  },
+  "us_bank_altitude_reserve_visa_infinite": {
+    "card_name": "U.S. Bank Altitude® Reserve Visa Infinite® Card",
+    "name_in_code": "us_bank_altitude_reserve_visa_infinite ",
+    "description": [
+      "travel credits that brings the cost of the card down to $75.",
+      "$100 statement credit for Global Entry to TSA Precheck every four years"
+    ],
+    "link": "https://www.usbank.com/credit-cards/altitude-reserve-visa-infinite-credit-card.html"
+  },
+  "us_bank_business_cash_rewards_world_elite_mastercard": {
+    "card_name": "U.S. Bank Business Cash Rewards World Elite™ Mastercard® review",
+    "name_in_code": "us_bank_business_cash_rewards_world_elite_mastercard ",
+    "description": [
+      "3 percent cash back on eligible purchases",
+      "Earn an extra 25 percent on prior year’s rewards (up to $250) each anniversary year"
+    ],
+    "link": "https://www.usbank.com/business-banking/business-credit-cards/business-cash-rewards.html"
+  },
+  "wells_fargo_reflect": {
+    "card_name": "Wells Fargo Reflect® Card",
+    "name_in_code": "wells_fargo_reflect ",
+    "description": [
+      "company deals and discounts"
+    ],
+    "link": "https://www.wellsfargo.com/credit-cards/reflect/"
+  },
+  "wells_fargo_autograph": {
+    "card_name": "Wells Fargo Autograph℠ Card",
+    "name_in_code": "wells_fargo_autograph ",
+    "description": [
+      "Earn 1X points on other purchases",
+      "Earn unlimited 3X points on restaurants, travel, gas stations, transit, popular streaming services and phone plans."
+    ],
+    "link": "https://www.wellsfargo.com/credit-cards/autograph/"
+  },
+  "wells_fargo_hotels_com_rewards_visa": {
+    "card_name": "Hotels.com® Rewards Visa® Credit Card",
+    "name_in_code": "wells_fargo_hotels_com_rewards_visa ",
+    "description": [
+      "Cardholders can earn stamps toward a reward night on all spending",
+      "Users can redeem reward nights at over 500,000 properties worldwide, including non-hotel options and properties that typically don’t offer reward nights"
+    ],
+    "link": "https://www.wellsfargo.com/credit-cards/hotels-com/"
+  },
+  "usaa_cashback_rewards_plus_american_express": {
+    "card_name": "USAA Cashback Rewards Plus American Express Card ",
+    "name_in_code": "usaa_cashback_rewards_plus_american_express ",
+    "description": [
+      "Earn 5% cash back on up to $3,000 per year in combined gas station and military base purchases.",
+      "Earn 2% cash back on up to $3,000 in grocery store spending per year.",
+      "Earn 1% cash back on other purchases."
+    ],
+    "link": "https://www.usaa.com/inet/wc/bank-credit-cards-american-express-cashback-rewards-plus-american-express-card"
+  },
+  "usaa_preferred_cash_rewards_visa_signature": {
+    "card_name": "Preferred Cash Rewards Visa® Signature Credit Cards Card ",
+    "name_in_code": "usaa_preferred_cash_rewards_visa_signature ",
+    "description": [
+      "Earn 1.5% cash back on all purchases."
+    ],
+    "link": "https://www.usaa.com/inet/wc/bank-credit-cards-preferred-cash-rewards-visa-signature-credit-card"
+  },
+  "usaa_rewards_american_express": {
+    "card_name": "USAA Rewards™ American Express® Credit Card ",
+    "name_in_code": "usaa_rewards_american_express ",
+    "description": [
+      "Earn 3 points per dollar spent at restaurants and fast food establishments.",
+      "Earn 2 points per dollar on gas and groceries.",
+      "Earn 1 point per dollar on other purchases."
+    ],
+    "link": "https://www.usaa.com/inet/wc/bank-credit-cards-rewards-american-express-credit-card"
+  },
+  "apple_card": {
+    "card_name": "Apple Card ",
+    "name_in_code": "apple_card ",
+    "description": [
+      "3% cash back on Apple products, services, and stores (including the App Store and Apple Store).",
+      "2% cash back on all other purchases made using Apple Pay.",
+      "1% cash back on purchases made with the physical titanium card or where Apple Pay is not accepted."
+    ],
+    "link": "https://www.apple.com/apple-card/"
+  }
+}
