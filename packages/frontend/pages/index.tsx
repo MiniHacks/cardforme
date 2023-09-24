@@ -109,6 +109,11 @@ export default function PlaidLink() {
                 height={"50px"}
                 bgGradient={"linear(to-l, #5200FF,#FF0080, #FF8A00)"}
                 marginTop={"50px"}
+                _hover={{
+                  // make it slightly bigger and glow
+                  transform: "scale(1.01)",
+                  boxShadow: "0 0 4px #FFF",
+                }}
                 onClick={() => open()}
               >
                 <Text>Start Now</Text>
