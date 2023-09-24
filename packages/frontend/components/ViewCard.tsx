@@ -63,12 +63,14 @@ const ViewCard = () => (
         width="85%"
         height="50px"
         bgGradient='linear(to-l, #5200FF,#FF0080, #FF8A00)'
+        onClick={() => window.open('https://www.americanexpress.com/us/credit-cards/card-application/apply/platinum-card/26129-10-0?pmccode=137&sid=12011830001&intlink=US-Acq-Shop-Consumer-PDP-Platinum-Prospect-Apply-intro#/', '_blank')}
       >
-        <Text >
-          Start Now
-        </Text>
-      </Box>
-    </Flex>
+    <Text>
+      Start Now
+    </Text>
+  </Box>
+</Flex>
+
   </Box>
 );
 
