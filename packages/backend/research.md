@@ -143,15 +143,6 @@ Benefits:
 - 2x on all other travel purchases, plus more 
 ---
 Company: Chase <br />
-Card: Ink Business Cash® Credit Card <br />
-Annual Fee: 0 <br />
-Name in code: chase_ink_business_cash <br >
-Benefits:
-- Earn 5% cash back on the first $25,000 spent in combined purchases at office supply stores and on internet, cable and phone services each account anniversary year
-- Earn 2% cash back on the first $25,000 spent in combined purchases at gas stations and restaurants each account anniversary year
-- Earn 1% cash back on all other card purchases with no limit to the amount you can earn
----
-Company: Chase <br />
 Card: Chase Sapphire Reserve® <br />
 Annual Fee: 550 <br />
 Name in code: chase_sapphire_reserve <br >
@@ -302,14 +293,14 @@ Annual Fee: 0 <br />
 Name in code: wells_fargo_active_cash <br >
 Benefits:
 - Earn unlimited 2% cash rewards on purchases
----
+<!-- ---
 Company: Wells Fargo <br />
 Card: Wells Fargo Reflect® Card<br />
 Annual Fee: 0 <br />
 Name in code: wells_fargo_reflect <br >
 Benefits:
 -Through My Wells Fargo Deals, you can get access to personalized deals from a variety of merchants. It's an easy way to earn cash back as an account credit when you shop, dine, or enjoy an experience simply by using an eligible Wells Fargo credit card.
--(useless)
+-(useless) -->
 ---
 Company: Wells Fargo <br />
 Card: Wells Fargo Autograph℠ Card<br />
@@ -319,22 +310,22 @@ Benefits:
 - Earn 1X points on other purchases
 - Earn unlimited 3X points on restaurants, travel, gas stations, transit, popular streaming services and phone plans.
 ---
-Company: Wells Fargo <br />
+<!-- Company: Wells Fargo <br />
 Card: Hotels.com® Rewards Visa® Credit Card<br />
 Annual Fee: 0 <br />
 Name in code: wells_fargo_hotels_com_rewards_visa <br >
 Benefits:
 - Cardholders can earn stamps toward a reward night on all spending
 - Users can redeem reward nights at over 500,000 properties worldwide, including non-hotel options and properties that typically don’t offer reward nights
----
-Company: Wells Fargo <br />
+--- -->
+<!-- Company: Wells Fargo <br />
 Card: Hotels.com® Rewards Visa® Credit Card<br />
 Annual Fee: 0 <br />
 Name in code: wells_fargo_hotels_com_rewards_visa <br >
 Benefits:
 - Cardholders can earn stamps toward a reward night on all spending
 - Users can redeem reward nights at over 500,000 properties worldwide, including non-hotel options and properties that typically don’t offer reward nights
----
+--- -->
 Company: USAA <br />
 Card: USAA Cashback Rewards Plus American Express Card <br />
 Annual Fee: 0 <br />
