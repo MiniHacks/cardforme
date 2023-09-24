@@ -4,10 +4,11 @@ import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
 import React, { useEffect, useState } from "react";
 import ViewCard from "../components/ViewCard";
 import GradientSpotlight from "../components/GradientSpotlight";
+import allCardData from "../components/allCardData.json";
 
 const Home: NextPage = () => {
   const [transactions, setTransactions] = useState({}); // Replace with the correct type
-
+  const [cards, setCards] = useState({}); // Replace with the correct type
   async function fetchTransactions() {
     try {
       const response = await fetch("/api/get-transactions", {
@@ -49,11 +50,13 @@ const Home: NextPage = () => {
           if (!response.ok) {
             throw new Error("Network response was not ok");
           }
+
           return response.json();
         })
         .then((responseData) => {
           setIsLoading(false);
           console.log("api worked");
+          setCards(responseData);
           return responseData;
         })
         .catch((error) => {
@@ -78,53 +81,20 @@ const Home: NextPage = () => {
   //     "link": "link_value"
   //   }
   // }
-  const cardsData = [
-    {
-      imageSrc: "/images/amex_platinum.png",
-      cardName: "Amex Platinum",
-      cardDescription: "Travel & Hotel credit",
-      link: "https://www.americanexpress.com/us/credit-cards/card/platinum/",
-    },
-    {
-      imageSrc: "/images/amex_platinum.png",
-      cardName: "Amex Platinum",
-      cardDescription: "Travel & Hotel credit",
-      link: "https://www.americanexpress.com/us/credit-cards/card/platinum/",
-    },
-    {
-      imageSrc: "/images/amex_platinum.png",
-      cardName: "Amex Platinum",
-      cardDescription: "Travel & Hotel credit",
-      link: "https://www.americanexpress.com/us/credit-cards/card/platinum/",
-    },
-    {
-      imageSrc: "/images/amex_platinum.png",
-      cardName: "Amex Platinum",
-      cardDescription: "Travel & Hotel credit",
-      link: "https://www.americanexpress.com/us/credit-cards/card/platinum/",
-    },
-    {
-      imageSrc: "/images/amex_platinum.png",
-      cardName: "Amex Platinum",
-      cardDescription: "Travel & Hotel credit",
-      link: "https://www.americanexpress.com/us/credit-cards/card/platinum/",
-    },
-    // Add more duplicates if needed
-  ];
 
   const cardsPerSlide = 3;
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => {
     setCurrentIndex(
-      (prevIndex) => (prevIndex + cardsPerSlide) % cardsData.length
+      (prevIndex) => (prevIndex + cardsPerSlide) % cards.cards?.length
     );
   };
 
   const handlePrevious = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0
-        ? cardsData.length - (cardsData.length % cardsPerSlide)
+        ? cards.cards?.length - (cards.cards?.length % cardsPerSlide)
         : prevIndex - cardsPerSlide
     );
   };
@@ -142,8 +112,29 @@ const Home: NextPage = () => {
     justifyContent: "center",
     position: "relative",
   };
+  console.log("Transactions:", cards);
 
-  const isLastPage = currentIndex + cardsPerSlide >= cardsData.length;
+  const cardList = () => {
+    return cards.cards
+      ?.slice(currentIndex, currentIndex + cardsPerSlide)
+      .map((card, index) => (
+        <Box
+          key={index}
+          zIndex={1}
+          marginRight={"20px"} // Add margin between cards
+        >
+          <ViewCard
+            imageSrc={`/images/${card[1]}.png`}
+            cardName={allCardData[card[1]]?.card_name}
+            cardDescription={allCardData[card[1]]?.description.join(",")}
+            cardNumber={currentIndex + index + 1}
+            cardAmount={card[0]}
+            onClick={() => window.open(allCardData[card[1]]?.link)}
+          />
+        </Box>
+      ));
+  };
+  const isLastPage = currentIndex + cardsPerSlide >= cards.cards?.length;
 
   return (
     <div style={pageStyle}>
@@ -198,7 +189,7 @@ const Home: NextPage = () => {
         <IconButton
           icon={<Icon as={ArrowRightIcon} boxSize={4} />}
           aria-label={"Next"}
-          isDisabled={isLastPage}
+          // isDisabled={isLastPage}
           onClick={handleNext}
           position={"absolute"}
           right={"20px"}
@@ -207,23 +198,24 @@ const Home: NextPage = () => {
         />
         {/* Cards */}
         <Flex>
-          {cardsData
-            .slice(currentIndex, currentIndex + cardsPerSlide)
-            .map((card, index) => (
-              <Box
-                key={index}
-                zIndex={1}
-                marginRight={"20px"} // Add margin between cards
-              >
-                <ViewCard
-                  imageSrc={card.imageSrc}
-                  cardName={card.cardName}
-                  cardDescription={card.cardDescription}
-                  cardNumber={currentIndex + index + 1}
-                  onClick={() => window.open(card.link)}
-                />
-              </Box>
-            ))}
+          {cardList()}
+          {/* {cardsData */}
+          {/* .slice(currentIndex, currentIndex + cardsPerSlide) */}
+          {/* .map((card, index) => ( */}
+          {/*   <Box */}
+          {/*     key={index} */}
+          {/*     zIndex={1} */}
+          {/*     marginRight={"20px"} // Add margin between cards */}
+          {/*   > */}
+          {/*     <ViewCard */}
+          {/*       imageSrc={card.imageSrc} */}
+          {/*       cardName={card.cardName} */}
+          {/*       cardDescription={card.cardDescription} */}
+          {/*       cardNumber={currentIndex + index + 1} */}
+          {/*       onClick={() => window.open(card.link)} */}
+          {/*     /> */}
+          {/*   </Box> */}
+          {/* ))} */}
         </Flex>
         {/* Add Next and Previous buttons here */}
       </Box>

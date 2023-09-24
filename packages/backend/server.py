@@ -26,6 +26,8 @@ def get_transactions():
         current_transactions = transactions.Transactions()
 
         for transaction in response:
+            if transaction['amount'] < 0:
+                continue
 
             category = transaction['category']
             if len(category) > 1:
@@ -61,7 +63,6 @@ def get_transactions():
         res.append((card_backtesting.citi_aadvantage_platinum_select(current_transactions), "citi_aadvantage_platinum_select"))
         res.append((card_backtesting.discover_it_cash_back(current_transactions), "discover_it_cash_back"))
         res.append((card_backtesting.discover_it_balance_transfer(current_transactions), "discover_it_balance_transfer"))
-        res.append((card_backtesting.discover_student_credit_card(current_transactions), "discover_student_credit_card"))
         res.append((card_backtesting.discover_it_miles(current_transactions), "discover_it_miles"))
         res.append((card_backtesting.discover_it_chrome(current_transactions), "discover_it_chrome"))
         res.append((card_backtesting.synchrony_sams_club_mastercard(current_transactions), "synchrony_sams_club_mastercard"))
@@ -76,8 +77,7 @@ def get_transactions():
         res.append((card_backtesting.usaa_rewards_american_express(current_transactions), "usaa_rewards_american_express"))
 
         res.sort(key = lambda x: x[0], reverse=True)
-        res = {item[1]: item[0] for item in res[:5]}
-        return jsonify(res)
+        return {"cards": res[:5]}
 
     except Exception as e:
         return jsonify({"error": str(e)}), 400
