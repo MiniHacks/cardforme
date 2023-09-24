@@ -6,7 +6,7 @@ import ViewCard from "../components/ViewCard";
 import GradientSpotlight from "../components/GradientSpotlight";
 
 const Home: NextPage = () => {
-  const [transactions, setTransactions] = useState([]); // Replace with the correct type
+  const [transactions, setTransactions] = useState({}); // Replace with the correct type
 
   async function fetchTransactions() {
     try {
@@ -34,32 +34,40 @@ const Home: NextPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const apiUrl = "https://127.0.0.1:8000/transactions";
+  const apiUrl = "http://127.0.0.1:8000/transactions";
+
+  const sendData = async () => {
+    try {
+      const requestOptions = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(transactions.transactions),
+      };
+
+      fetch(apiUrl, requestOptions)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((responseData) => {
+          setIsLoading(false);
+          console.log("api worked");
+          return responseData;
+        })
+        .catch((error) => {
+          setError(error);
+          setIsLoading(false);
+        });
+    } catch (error) {
+      console.error("Error fetching transactions:", error);
+    }
+  };
 
   useEffect(() => {
-    const requestOptions = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: transactions,
-    };
-
-    fetch(apiUrl, requestOptions)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((responseData) => {
-        setIsLoading(false);
-        console.log("api worked");
-        return responseData;
-      })
-      .catch((error) => {
-        setError(error);
-        setIsLoading(false);
-      });
-  }, []);
+    sendData();
+  }, [transactions]);
 
   //
   // Format cards like this instead
@@ -69,7 +77,7 @@ const Home: NextPage = () => {
   //   "photo_location": "photo_location_value",
   //     "description": "description_value",
   //     "link": "link_value"
-  // }
+  //   }
   // }
 
   const cardsData = [
