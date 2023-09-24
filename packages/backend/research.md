@@ -179,7 +179,7 @@ Card: Citi Premier Card <br />
 Annual Fee: 95 <br />
 Name in code: citi_premier <br >
 Benefits:
-- 3X ThankYou Points per $1 on restaurant, supermarket, gas station, hotel and air travel purchases
+- 3X ThankYou Points per $1 on restaurant, supermarket, gas station, hotel and air travel purchasescompany
 - 1X Points on all other purchases. 
 - Plus, for a limited time, earn a total of 10 ThankYou® Points per $1 spent on hotel, car rentals, and attractions (excluding air travel) booked on the Citi TravelSM portal through June 30, 2024.
 ---
@@ -287,6 +287,7 @@ Benefits:
 - Earn an extra 25 percent on prior year’s rewards (up to $250) each anniversary year
 - No annual fee, lengthy intro APR on both purchases and balance transfers and free employee cards
 <br />
+---
 Company: Wells Fargo <br />
 Card:Wells Fargo Active Cash® Card <br />
 Annual Fee: 0 <br />
