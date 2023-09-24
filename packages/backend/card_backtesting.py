@@ -340,7 +340,7 @@ def discover_student_credit_card(card):
 Discover It Miles
 def discover_it_miles(card):
     tot = 0
-    tot += (card.flight * 1.5) / 100
+    tot += (card.flights * 1.5) / 100
     return tot
 
 # Discover It Chrome
@@ -450,6 +450,7 @@ def us_bank_cash_plus_visa_signature(card):
 
 def us_bank_altitude_reserve_visa_infinite(card):
      tot_points = 0
+     tot_dollar_value = 0
     if card.digital_wallet:
         tot_points += card.hotels * 3
         tot_points += card.car_rental * 3
@@ -469,7 +470,7 @@ def us_bank_business_cash_rewards_world_elite_mastercard(card):
     return tot
 
 #Wells Fargo Active Cash® Card 
-def wells_fargo_active_cash(cash):
+def wells_fargo_active_cash(card):
     tot = 0
     tot += (card.total * 2) / 100
     return tot
@@ -479,14 +480,12 @@ def wells_fargo_autograph(card):
     tot_points = 0
     tot = 0
     tot += (card.total * (.2)) /100 
-    if card.restaurants:
+    if card.dining:
         tot_points += card.restaurants * 3
     if card.gas:
         tot_points += card.flights * 3
     if card.groceries:      
         tot_points += card.gas * 3
-    if card.dining:    
-        tot_points += card.hotel * 3
     if card.entertainment:    
         tot_points += card.entertainment * 3
     tot += tot_points / 5
