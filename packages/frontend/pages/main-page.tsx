@@ -1,11 +1,77 @@
 import type { NextPage } from "next";
 import { Box, Flex, Heading, IconButton, Icon } from "@chakra-ui/react";
 import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
+import React, { useEffect, useState } from "react";
 import ViewCard from "../components/ViewCard";
-import React, { useState } from "react";
 import GradientSpotlight from "../components/GradientSpotlight";
 
 const Home: NextPage = () => {
+  const [transactions, setTransactions] = useState([]); // Replace with the correct type
+
+  async function fetchTransactions() {
+    try {
+      const response = await fetch("/api/get-transactions", {
+        method: "POST",
+        headers: {
+          Authorization: window.localStorage.getItem("token"),
+        },
+      }); // Use the correct API endpoint
+      if (!response.ok) {
+        throw new Error("Failed to fetch transactions");
+      }
+      const transactionsData = await response.json();
+      setTransactions(transactionsData);
+      // Process and display the transactionsData as needed
+      return transactionsData; // You can replace this with your logic to display the data
+    } catch (error) {
+      console.error("Error fetching transactions:", error);
+    }
+  }
+  useEffect(() => {
+    const data = fetchTransactions();
+  }, []);
+
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const apiUrl = "https://127.0.0.1:8000/transactions";
+
+  useEffect(() => {
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: transactions,
+    };
+
+    fetch(apiUrl, requestOptions)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((responseData) => {
+        setIsLoading(false);
+        console.log("api worked");
+        return responseData;
+      })
+      .catch((error) => {
+        setError(error);
+        setIsLoading(false);
+      });
+  }, []);
+
+  //
+  // Format cards like this instead
+  //
+  // {
+  //   "card_name": {
+  //   "photo_location": "photo_location_value",
+  //     "description": "description_value",
+  //     "link": "link_value"
+  // }
+  // }
+
   const cardsData = [
     {
       imageSrc: "/images/amex_platinum.png",
@@ -44,7 +110,9 @@ const Home: NextPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + cardsPerSlide) % cardsData.length);
+    setCurrentIndex(
+      (prevIndex) => (prevIndex + cardsPerSlide) % cardsData.length
+    );
   };
 
   const handlePrevious = () => {
@@ -74,32 +142,38 @@ const Home: NextPage = () => {
   return (
     <div style={pageStyle}>
       <Box>
-        <Heading color="#FFFFFF" fontFamily="Outfit" ml={192} pt={25} pb={15}>
+        <Heading
+          color={"#FFFFFF"}
+          fontFamily={"Outfit"}
+          ml={192}
+          pt={25}
+          pb={15}
+        >
           Customer Favorites
         </Heading>
       </Box>
       <Box style={carouselStyle}>
         {/* GradientSpotlight components */}
         <Box
-          position="absolute"
-          left="-80px"
-          top="100px"
+          position={"absolute"}
+          left={"-80px"}
+          top={"100px"}
           zIndex={0} // Set a lower zIndex
         >
           <GradientSpotlight /> {/* Use the GradientSpotlight component */}
         </Box>
         <Box
-          position="absolute"
-          left="400px"
-          top="0px"
+          position={"absolute"}
+          left={"400px"}
+          top={"0px"}
           zIndex={0} // Set a lower zIndex
         >
           <GradientSpotlight /> {/* Use the GradientSpotlight component */}
         </Box>
         <Box
-          position="absolute"
-          left="1000px"
-          top="-200px"
+          position={"absolute"}
+          left={"1000px"}
+          top={"-200px"}
           zIndex={0} // Set a lower zIndex
         >
           <GradientSpotlight /> {/* Use the GradientSpotlight component */}
@@ -107,41 +181,43 @@ const Home: NextPage = () => {
         {/* Navigation Buttons */}
         <IconButton
           icon={<Icon as={ArrowLeftIcon} boxSize={4} />}
-          aria-label="Previous"
+          aria-label={"Previous"}
           isDisabled={currentIndex === 0}
           onClick={handlePrevious}
-          position="absolute"
-          left="20px"
-          top="50%"
-          transform="translateY(-50%)"
+          position={"absolute"}
+          left={"20px"}
+          top={"50%"}
+          transform={"translateY(-50%)"}
         />
         <IconButton
           icon={<Icon as={ArrowRightIcon} boxSize={4} />}
-          aria-label="Next"
+          aria-label={"Next"}
           isDisabled={isLastPage}
           onClick={handleNext}
-          position="absolute"
-          right="20px"
-          top="50%"
-          transform="translateY(-50%)"
+          position={"absolute"}
+          right={"20px"}
+          top={"50%"}
+          transform={"translateY(-50%)"}
         />
         {/* Cards */}
         <Flex>
-          {cardsData.slice(currentIndex, currentIndex + cardsPerSlide).map((card, index) => (
-            <Box
-              key={index}
-              zIndex={1}
-              marginRight="20px" // Add margin between cards
-            >
-              <ViewCard
-                imageSrc={card.imageSrc}
-                cardName={card.cardName}
-                cardDescription={card.cardDescription}
-                cardNumber={currentIndex + index + 1}
-                onClick={() => window.open(card.link)}
-              />
-            </Box>
-          ))}
+          {cardsData
+            .slice(currentIndex, currentIndex + cardsPerSlide)
+            .map((card, index) => (
+              <Box
+                key={index}
+                zIndex={1}
+                marginRight={"20px"} // Add margin between cards
+              >
+                <ViewCard
+                  imageSrc={card.imageSrc}
+                  cardName={card.cardName}
+                  cardDescription={card.cardDescription}
+                  cardNumber={currentIndex + index + 1}
+                  onClick={() => window.open(card.link)}
+                />
+              </Box>
+            ))}
         </Flex>
         {/* Add Next and Previous buttons here */}
       </Box>

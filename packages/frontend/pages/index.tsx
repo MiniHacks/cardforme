@@ -7,25 +7,6 @@ import { usePlaidLink } from "react-plaid-link";
 import PageLayout from "../components/Layout/PageLayout";
 import GradientSpotlight from "../components/GradientSpotlight";
 
-async function fetchTransactions() {
-  try {
-    const response = await fetch("/api/get-transactions", {
-      method: "POST",
-      headers: {
-        Authorization: window.localStorage.getItem("token"),
-      },
-    }); // Use the correct API endpoint
-    if (!response.ok) {
-      throw new Error("Failed to fetch transactions");
-    }
-    const transactionsData = await response.json();
-    // Process and display the transactionsData as needed
-    console.log(transactionsData); // You can replace this with your logic to display the data
-  } catch (error) {
-    console.error("Error fetching transactions:", error);
-  }
-}
-
 export default function PlaidLink() {
   const router = useRouter();
   const [token, setToken] = useState(null);
@@ -43,7 +24,6 @@ export default function PlaidLink() {
       setToken(link_token);
     };
     createLinkToken();
-    fetchTransactions();
   }, []);
 
   const onSuccess = useCallback(async (publicToken) => {
@@ -56,7 +36,6 @@ export default function PlaidLink() {
     });
     const token = await res.json();
     window.localStorage.setItem("token", token.token);
-    console.log(token);
     router.push("/main-page");
   }, []);
 
@@ -146,23 +125,23 @@ export default function PlaidLink() {
               >
                 <Text>Start Now</Text>
               </Box>
-              <Box
-                as={"button"}
-                color={"white"}
-                fontWeight={"bold"}
-                borderRadius={"12px"}
-                width={"200px"}
-                height={"50px"}
-                bgGradient={"linear(to-l, #5200FF,#FF0080, #FF8A00)"}
-                marginTop={"50px"}
-                zIndex={1}
-                _hover={{
-                  transform: "scale(1.02)",
-                }}
-                onClick={fetchTransactions} // Call the fetchTransactions function when the button is clicked
-              >
-                <Text>Fetch Transactions</Text>
-              </Box>
+              {/* <Box */}
+              {/*  as={"button"} */}
+              {/*  color={"white"} */}
+              {/*  fontWeight={"bold"} */}
+              {/*  borderRadius={"12px"} */}
+              {/*  width={"200px"} */}
+              {/*  height={"50px"} */}
+              {/*  bgGradient={"linear(to-l, #5200FF,#FF0080, #FF8A00)"} */}
+              {/*  marginTop={"50px"} */}
+              {/*  zIndex={1} */}
+              {/*  _hover={{ */}
+              {/*    transform: "scale(1.02)", */}
+              {/*  }} */}
+              {/*  onClick={fetchTransactions} // Call the fetchTransactions function when the button is clicked */}
+              {/* > */}
+              {/*  <Text>Fetch Transactions</Text> */}
+              {/* </Box> */}
             </VStack>
           </Box>
           <Box
@@ -171,7 +150,6 @@ export default function PlaidLink() {
             left={"-30"}
             width={"100%"}
             height={"100%"}
-
           >
             <GradientSpotlight />
           </Box>
