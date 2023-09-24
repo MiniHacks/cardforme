@@ -525,5 +525,3 @@ def usaa_rewards_american_express(card):
     tot += tot_points / 5
     return tot
 
-if __name__ == "__main__":
-

@@ -2,10 +2,10 @@ import heapq
 class Transactions:
 
     def __init__(self, response):
-        self.flights = 0.0
+        self.flights = 0.0 # 'Airlines and Aviation Services'
         self.groceries = 0.0
-        self.gas = 0.0
-        self.dining = 0.0
+        self.gas = 0.0 # 'Taxi'
+        self.dining = 0.0 # 'Restaurants'
         self.entertainment = 0.0
         self.car_rental = 0.0
         self.hotel = 0.0
