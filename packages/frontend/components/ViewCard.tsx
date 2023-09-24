@@ -4,7 +4,7 @@ import { Box, Button, Heading, Stack, Text, Image, HStack, Flex, Center } from "
 const ViewCard = () => (
   <Box
     style={{
-      backgroundColor: 'rgba(255, 255, 255, 0.8)', // Adjust opacity as needed
+      backgroundColor: 'rgba(255, 255, 255, 0.28)', // Adjust opacity as needed
       backdropFilter: 'blur(10px)', // Adjust the blur value as needed
       boxShadow: '0px 0px 10px rgba(255, 105, 180, 0.5)' // Pink drop shadow glow
     }}
@@ -32,20 +32,24 @@ const ViewCard = () => (
           fontFamily="Outfit"
           fontWeight="600"
           fontSize="30px"
-        >
-          #1
+        >#1
         </Text>
         <Text
           fontFamily="Outfit"
           fontWeight="600"
           fontSize="30px"
-          textColor="#000000"
+          textColor="#FFFFFF"
         >
           Amex Platinum
         </Text>
       </HStack>
-      <Text>
-        Cool Text
+      <Text
+        fontFamily="Outfit"
+        fontWeight="400"
+        fontSize="15px"
+        textColor="#FFFFFF"
+      >
+        - Cool Text
       </Text>
     </Stack>
     <Flex
@@ -63,15 +67,14 @@ const ViewCard = () => (
         width="85%"
         height="50px"
         bgGradient='linear(to-l, #5200FF,#FF0080, #FF8A00)'
-        onClick={() => window.open('https://www.americanexpress.com/us/credit-cards/card-application/apply/platinum-card/26129-10-0?pmccode=137&sid=12011830001&intlink=US-Acq-Shop-Consumer-PDP-Platinum-Prospect-Apply-intro#/', '_blank')}
       >
-    <Text>
-      Start Now
-    </Text>
-  </Box>
-</Flex>
-
+        <Text >
+          Start Now
+        </Text>
+      </Box>
+    </Flex>
   </Box>
 );
 
 export default ViewCard;
+
