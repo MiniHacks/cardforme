@@ -115,7 +115,7 @@ const Home: NextPage = () => {
           pt={25}
           pb={15}
         >
-          Customer Favorites
+          Personal Picks
         </Heading>
       </Box>
       <Box style={carouselStyle}>
