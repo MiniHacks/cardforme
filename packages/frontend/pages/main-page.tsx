@@ -79,7 +79,14 @@ const Home: NextPage = () => {
                 padding: "10px", // Add padding between ViewCards
               }}
             >
-              {currentIndex + index < numViewCards && <ViewCard />}
+              {currentIndex + index < numViewCards && <ViewCard 
+  imageTestId="amex_platinum.png" 
+  textTestId={""} 
+  onClick={() => {
+    window.location.href = "https://www.americanexpress.com/us/credit-cards/card-application/apply/platinum-card/25330-10-0?pmccode=137&intlink=US-Acq-Shop-Consumer-PDP-Platinum-Prospect-Apply-intro#/";
+  }} 
+/>
+}
             </div>
           ))}
         </div>
