@@ -334,13 +334,13 @@ def discover_it_balance_transfer(card):
 
 def discover_student_credit_card(card):
     tot = 0
-    tot += (card.total * 5) / 100
+    tot += (card.total * 5) / 100 #fix later lol
     return tot
 
 # Discover It Miles
 def discover_it_miles(card):
     tot = 0
-    tot += (card.flights * 1.5) / 100
+    tot += (card.total * 1.5) / 100
     return tot
 
 # Discover It Chrome
